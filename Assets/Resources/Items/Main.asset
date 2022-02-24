@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad439b67fd1bf04d833ed27136623c2, type: 3}
+  m_Name: Main
+  m_EditorClassIdentifier: 
+  items:
+  - id: 1
+    name: Oak Log
+    icon: {fileID: 21300000, guid: b1507baf58bd2b6418f0c187af5c6b65, type: 3}
+    maxStack: 10
+  - id: 2
+    name: Dead Log
+    icon: {fileID: 21300000, guid: f3dc081df0880c54d90313c52e7aed07, type: 3}
+    maxStack: 10
+  - id: 3
+    name: Axe
+    icon: {fileID: 21300000, guid: ef231e22ebc8cd24faf50920cdae39f1, type: 3}
+    maxStack: 1
+  - id: 4
+    name: Dildo
+    icon: {fileID: 21300000, guid: baca41270f49e2247ac4e0e8e524acb8, type: 3}
+    maxStack: 3
