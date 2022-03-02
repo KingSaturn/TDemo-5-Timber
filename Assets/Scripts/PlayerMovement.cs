@@ -5,27 +5,48 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
-    public Collider boxCollider;
 
-    public float speed = 10.0f;
-    float turnSmoothTime = 0.2f;
-    float turnSmoothVelocity;
+    // Speed will change depending on having axe or not and if we add anything else that affects it. 
+    public float speed = 18f;
+    public float gravity = -9.81f;
+    public float jumpHeight = 20f;
 
-    private void Update()
+    public Transform groundCheck;
+    public float groundDistance = 0.4f;
+    public LayerMask groundMask;
+    //public Transform axePosition;
+
+    Vector3 velocity;
+    bool isGrounded;
+
+    // Just to have an idea
+    // bool axePicked;
+
+    // Update is called once per frame
+    void Update()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-        Vector3 direction = new Vector3(horizontal, 0.0f, vertical).normalized;
-        if (direction.magnitude >= 0.1f)
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
+        if (isGrounded && velocity.y < 0)
         {
-            float targetAngle = Mathf.Atan2 (direction.x, direction.z) * Mathf.Rad2Deg;
-            float angle = Mathf.SmoothDampAngle (transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
-            transform.rotation = Quaternion.Euler(0.0f, angle, 0.0f);
-            controller.Move(speed * Time.deltaTime * direction);
+            velocity.y = -2f; 
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+
+        if(Input.GetButtonDown("Jump") && isGrounded)
         {
-            boxCollider.attachedRigidbody.AddForce(0, 200, 0);
-        }    
-}
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        }
+
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
+
+        Vector3 move = transform.right * x + transform.forward * z;
+
+        controller.Move(move * speed * Time.deltaTime);
+
+        velocity.y += gravity * Time.deltaTime;
+
+        controller.Move(velocity * Time.deltaTime);
+    }
+
 }
