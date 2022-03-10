@@ -7,10 +7,10 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController controller;
     public GameObject player;
     public Camera mainCam;
+    public PlayerInfo info;
+    public AxeClass axe;
 
     // Speed will change depending on having axe or not and if we add anything else that affects it. 
-    public float speed = 18f;
-    public float gravity = -9.81f;
     public float jumpHeight = 20f;
 
     // Gravity ground 
@@ -27,7 +27,6 @@ public class PlayerMovement : MonoBehaviour
 
     // Attack components
     public Transform enemyCheck;
-    public float attackRange = 1.0f;
     public LayerMask enemyMask;
 
     // Update is called once per frame
@@ -41,9 +40,9 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 move = transform.right * x + transform.forward * z;
 
-        controller.Move(move * speed * Time.deltaTime);
+        controller.Move(move * info.speed.GetValue() * Time.deltaTime);
 
-        velocity.y += gravity * Time.deltaTime;
+        velocity.y += info.gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
 
@@ -56,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * info.gravity);
         }
 
         if (Input.GetMouseButtonDown(1))
@@ -68,11 +67,11 @@ public class PlayerMovement : MonoBehaviour
     // Attacking function
     void Attack()
     {
-        Collider[] hitEnemies = Physics.OverlapSphere(enemyCheck.position, attackRange, enemyMask);
+        Collider[] hitEnemies = Physics.OverlapSphere(enemyCheck.position, (info.attackRange.GetValue() + axe.range.GetValue()), enemyMask);
 
         foreach (Collider enemy in hitEnemies)
         {
-            enemy.GetComponent<Enemy>().TakeDamage(10);
+            enemy.GetComponent<Enemy>().TakeDamage(info.attack.GetValue() + axe.damage.GetValue());
             Debug.Log("Hit");
         }
     }
@@ -83,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
         if (enemyCheck == null)
             return;
 
-        Gizmos.DrawSphere(enemyCheck.position, attackRange);
+        Gizmos.DrawSphere(enemyCheck.position, (info.attackRange.GetValue() + axe.range.GetValue()));
     }
 
     // Rotation functions

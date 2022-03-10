@@ -243,6 +243,7 @@ GameObject:
   - component: {fileID: 674747004}
   - component: {fileID: 674747003}
   - component: {fileID: 674747002}
+  - component: {fileID: 674747007}
   - component: {fileID: 674747001}
   m_Layer: 7
   m_Name: CubeWillBeAxe
@@ -273,7 +274,6 @@ MonoBehaviour:
   item: {fileID: 674747000}
   tempParent: {fileID: 718208166}
   isHolding: 0
-  cam: {fileID: 963194227}
   grabTimer: 2
 --- !u!54 &674747002
 Rigidbody:
@@ -367,6 +367,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &674747007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674747000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbde12e9774585d48a526e55f555d362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,6 +482,8 @@ GameObject:
   m_Component:
   - component: {fileID: 718208168}
   - component: {fileID: 718208167}
+  - component: {fileID: 718208171}
+  - component: {fileID: 718208170}
   - component: {fileID: 718208169}
   m_Layer: 0
   m_Name: PlayerObject
@@ -527,14 +541,64 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 718208167}
-  speed: 12
-  gravity: -62
+  player: {fileID: 1515263002}
+  mainCam: {fileID: 963194227}
+  info: {fileID: 718208171}
+  axe: {fileID: 0}
   jumpHeight: 5
   groundCheck: {fileID: 483866883}
   groundDistance: 0.3
   groundMask:
     serializedVersion: 2
     m_Bits: 64
+  enemyCheck: {fileID: 0}
+  attackRange: 1
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!114 &718208170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718208166}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 798b6a25ea101374eb155f1c97400dd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
+  minEthic: 0
+  maxEthic: 0
+--- !u!114 &718208171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718208166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e8b231517496248be5e063b30482f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHp: 0
+  gravity: -9.81
+  maxHp:
+    baseValue: 100
+  attack:
+    baseValue: 10
+  speed:
+    baseValue: 19
+  attackSpeed:
+    baseValue: 1
+  attackRange:
+    baseValue: 5
+  inventorySize:
+    baseValue: 10
+  ethics:
+    baseValue: 0
 --- !u!1 &842529765
 GameObject:
   m_ObjectHideFlags: 0

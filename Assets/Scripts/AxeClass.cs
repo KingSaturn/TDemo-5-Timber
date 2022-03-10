@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class AxeClass : MonoBehaviour
 {
+    public Stat damage;
+    public Stat attackSpeed;
+    public Stat range;
+
+    public Stat chopSpeed;
+    public Stat weight;
+    Sprite Sprite;
     //// Start is called before the first frame update
     //void Start()
     //{
@@ -14,24 +21,11 @@ public class AxeClass : MonoBehaviour
 
     public class Axe
     {
-        public int damage;
-        public float attackSpeed;
-        public int range;
+       
 
-        public float chopSpeed;
-        public float weight;
-
-        Sprite Sprite;
         
-        public Axe()
-        {
-            damage = 1;
-            weight = 0.1f;
-            range = 1;
-            attackSpeed = 0.1f;
-            chopSpeed = 0.1f;
-            Sprite = null;
-        }
+        
+
     }
     void Update()
     {
