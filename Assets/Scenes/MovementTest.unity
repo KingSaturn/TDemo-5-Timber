@@ -379,6 +379,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbde12e9774585d48a526e55f555d362, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage:
+    baseValue: 10
+  attackSpeed:
+    baseValue: 5
+  range:
+    baseValue: 5
+  chopSpeed:
+    baseValue: 5
+  weight:
+    baseValue: 5
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,7 +554,7 @@ MonoBehaviour:
   player: {fileID: 1515263002}
   mainCam: {fileID: 963194227}
   info: {fileID: 718208171}
-  axe: {fileID: 0}
+  axe: {fileID: 674747007}
   jumpHeight: 5
   groundCheck: {fileID: 483866883}
   groundDistance: 0.3
@@ -552,7 +562,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   enemyCheck: {fileID: 0}
-  attackRange: 1
   enemyMask:
     serializedVersion: 2
     m_Bits: 0
