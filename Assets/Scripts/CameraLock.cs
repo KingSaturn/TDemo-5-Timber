@@ -10,7 +10,7 @@ public class CameraLock : MonoBehaviour
     void Start()
     {
         player = (GameObject.FindGameObjectsWithTag("Player"))[0];
-        cameraOffset = new Vector3(80.0f ,134.0f ,-90.0f);
+        cameraOffset = new Vector3(0.0f ,134.0f ,-120.0f);
     }
 
     // Update is called once per frame
