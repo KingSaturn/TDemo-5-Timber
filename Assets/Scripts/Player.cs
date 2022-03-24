@@ -12,15 +12,17 @@ namespace player_scope
 		public static GameObject player;
 			private const string player_tag= "Player";
 			private CharacterController Controller;
-			private float speed= 240;
+			//The stat class that will be used to determine things
+			private PlayerInfo info;
 			private Vector3 velocity;
 			//Used to access the players hand for equipting the axe
 			public static GameObject player_hand;
+			public static GameObject inventory;
+			public static Canvas inventory_canvas;
 	//Animation Block
 		//The player must have an Animator component
 		private Animator human_animations;
 			private int movement_animation_logger;	//Used to keep track if the player is moving or not
-
 	//Camera
 		//Must be in the game and tagged as the "MainCamera"
 		private Camera mainCam;
@@ -29,7 +31,6 @@ namespace player_scope
 		//Jan can explaim these
 		public Transform enemyCheck;
 		public LayerMask enemyMask;
-		public float attackRange= 1.0f;
 	//Axe Vairables
 		//There are two seperate gameobjects to account for their different properties, i.e The held one does not have a ridig body just a collider while thrown has both
 		private GameObject axe;	//Used for tracking the current axe
@@ -57,12 +58,14 @@ namespace player_scope
 	// Start is called before the first frame update
 		void Start()
 		{
-		//PLayer	-Automatically aqquires objects no need to pass them in via public 
-			player=(GameObject.FindGameObjectsWithTag(player_tag ) )[0 ];
+		//Player	-Automatically aqquires objects no need to pass them in via public 
+			player=(GameObject.FindGameObjectsWithTag(player_tag) )[0];
 				Controller=player.GetComponent<CharacterController>();
 				human_animations=player.GetComponent<Animator>();
+				info = player.GetComponent<PlayerInfo>();
 				player_hand= GameObject.Find("Lumber_Jack/Armature/Hand_L/Hand_L_end" );
-
+				inventory = GameObject.Find("Lumber_Jack/Inventory");
+			inventory_canvas = inventory.GetComponent<Canvas>();
 		//Camera		
 			mainCam=(GameObject.FindGameObjectsWithTag(mainCam_tag ) )[0 ].GetComponent<Camera>();
 		//Axe
@@ -187,6 +190,7 @@ namespace player_scope
 				//Cleanup
 					Has_axe= false;
 					Destroy(GameObject.Find("held_axe" ) );
+					inventory_canvas.enabled = false;
 					
 					Axe_Thrower(player, thrown_axe_prefab, axe_throwing_power );
 					axe=GameObject.FindGameObjectsWithTag(axe_tag )[0 ];	//Updates the axe value
@@ -216,7 +220,7 @@ namespace player_scope
 			
 			Vector3 move=transform.right* x+ transform.forward* z;
 
-			Controller.Move(move* speed* Time.deltaTime );
+			Controller.Move(move* info.speed.GetValue()* Time.deltaTime );
 			Controller.Move(velocity* Time.deltaTime );
 		//Aiming block used for updating the rotation value for the player
 			Aim();	
@@ -241,7 +245,8 @@ namespace player_scope
 						
 						//Reparent the axe to the hand again.
 						AxeParent.Parent_Axe(held_axe_prefab );
-						axe=GameObject.FindGameObjectsWithTag(axe_tag )[0 ];
+						inventory_canvas.enabled = true;
+						axe =GameObject.FindGameObjectsWithTag(axe_tag )[0 ];
 						Has_axe= true;
 						
 						break;
@@ -281,7 +286,7 @@ namespace player_scope
 			if(enemyCheck == null)
 				return;
 
-			Gizmos.DrawSphere(enemyCheck.position, attackRange);   
+			Gizmos.DrawSphere(enemyCheck.position, info.attackRange.GetValue());   
 		}
 		
 	//Used to get the right rotation for the axe throwing

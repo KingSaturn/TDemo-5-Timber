@@ -9,9 +9,11 @@ public class InventoryUI : MonoBehaviour
     private Slot[] slots;
     [SerializeField] private Transform slotsParent;
     [SerializeField] private Slot slotPrefab;
-    [SerializeField] private int inventorySize = 20;
-    [SerializeField] private Inventory inventory;
+    public static GameObject player;
+    private Inventory inventory;
+    private PlayerInfo info;
     private int curserHover = -1;
+
     public int GetCurserHover()
     {
         return curserHover;
@@ -22,9 +24,9 @@ public class InventoryUI : MonoBehaviour
     }
     public void GenerateEmptySlots()
     {
-        slots = new Slot[inventorySize];
+        slots = new Slot[info.inventorySize.GetValue()];
         DestroyChildren();
-        for (int i = 0; i < inventorySize; i++)
+        for (int i = 0; i < info.inventorySize.GetValue(); i++)
         {
             Slot s = Instantiate(slotPrefab, slotsParent);
             s.Init(this, i);
@@ -49,6 +51,10 @@ public class InventoryUI : MonoBehaviour
     }
     public void Start()
     {
+        player = (GameObject.FindGameObjectsWithTag("Player"))[0];
+        info = player.GetComponent<PlayerInfo>();
+        inventory = player.GetComponent<Inventory>();
+
         inventory.OnIvnChange += OnInvChange;
         GenerateEmptySlots();
     }
