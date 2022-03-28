@@ -37,17 +37,20 @@ namespace player_scope
 			private const string axe_tag= "Axe";
 		public GameObject held_axe_prefab;
 		public GameObject thrown_axe_prefab;
-			public static bool Has_axe;	//Used to keep track of if the player has the axe in hand
-			
+			public static bool Has_axe; //Used to keep track of if the player has the axe in hand
+			public static bool charging_axe;
+		//Cooldown for picking up the axe so it doesn't insta-equip
+		private float axe_pickup_timer;
 		//Used to keep track of  how hard the axe will be thrown
 		private float axe_throwing_power;
 			private const float AXE_MIN_POWER= 2000.0f;	//Min value 
-			private const float AXE_MAX_POWER= 250000.0f;	//Max value
-			private const float AXE_INCRIMENT= 50000.0f;	//Stepping value
+			private const float AXE_MAX_POWER= 10000.0f;	//Max value
+			private const float AXE_INCRIMENT= 2000.0f;	//Stepping value
 			//Timer vairables for the incrument in power, for as long as the button is held the timer will start counting down
 			private float axe_incriment_timer;
 				private const float HALF= 0.5f;
 				private const float ZERO= 0.0f;
+			
 		//Variables for the axe.
 		private Vector3 axe_position= new Vector3(-0.0465f, -0.021f, 0.0f );
 		private Quaternion axe_rotation= new Quaternion(-0.194f, 2.155f, 275.215f, 0.0f );
@@ -73,14 +76,21 @@ namespace player_scope
 				
 			axe=(GameObject.FindGameObjectsWithTag(axe_tag ) )[0 ];
 				Has_axe= true;
+				charging_axe = false;
 						
 			axe_throwing_power= AXE_MIN_POWER;
-				axe_incriment_timer= HALF;	
+				axe_incriment_timer= ZERO;
+				axe_pickup_timer = HALF;
 		}
 
 		// Update is called once per frame
 		void Update()
 		{
+			Debug.Log(axe_incriment_timer + " " + axe_throwing_power);
+			if (transform.position.y > 3.0f)
+            {
+				Controller.Move(new Vector3(0,-1,0));
+            }
 		//W Key
 			if(Input.GetKeyDown(KeyCode.W ) )
 			{
@@ -154,32 +164,36 @@ namespace player_scope
 		//Mouse One THROW CHARGE UP CODE
 			if(Input.GetMouseButtonDown(0 ) )
 			{
-			//Charging Up Throw
-				if(Has_axe== true )
+				//Charging Up Throw
+				if (Has_axe == true)
 				{
-					axe_incriment_timer-= Time.deltaTime;
-					
-					if(axe_incriment_timer< ZERO )
-					{
-						switch(axe_throwing_power )
-						{
-							case AXE_MAX_POWER:
-								break;
-							
-							default:
-								axe_throwing_power+= AXE_INCRIMENT;
-								break;
-						}
-					}
-					
-					else
-					{
-					}
+					charging_axe = true;
 				}
-				
-				else
-				{
-				}
+			}
+			if (charging_axe)
+            {
+				axe_incriment_timer += Time.deltaTime;
+
+
+				// Jan's code, if you wanna try and fix it somehow, go ahead
+				//if (axe_incriment_timer < ZERO)
+				//{
+				//	switch (axe_throwing_power)
+				//	{
+				//		case AXE_MAX_POWER:
+				//			break;
+
+				//		default:
+				//			axe_throwing_power += AXE_INCRIMENT;
+				//			break;
+				//	}
+				//}
+			}
+		
+			// Makes the cooldown timer for picking back up the axe function.
+			if(Has_axe== false)
+            {
+				axe_pickup_timer -= Time.deltaTime;
 			}
 		//For releasing the axe	ACTUAL THROWING CODE
 			if(Input.GetMouseButtonUp(0 ) )
@@ -188,19 +202,28 @@ namespace player_scope
 				{
 					human_animations.SetTrigger("isAttacking" );
 				//Cleanup
-					Has_axe= false;
+					charging_axe = false;
+					Has_axe = false;
 					Destroy(GameObject.Find("held_axe" ) );
 					inventory_canvas.enabled = false;
+
+					axe_throwing_power = (axe_incriment_timer * AXE_MAX_POWER + AXE_MIN_POWER);
+					if (axe_throwing_power > AXE_MAX_POWER)
+                    {
+						axe_throwing_power = AXE_MAX_POWER;
+					}
 					
 					Axe_Thrower(player, thrown_axe_prefab, axe_throwing_power );
 					axe=GameObject.FindGameObjectsWithTag(axe_tag )[0 ];	//Updates the axe value
 										
-					axe_throwing_power= AXE_MIN_POWER;	//Reset for the next one
+					axe_throwing_power= AXE_MIN_POWER;  //Reset for the next one
+					axe_incriment_timer = ZERO;
 				}
 				
 				else
 				{
 					axe_throwing_power= AXE_MIN_POWER;
+					axe_incriment_timer = ZERO;
 				}
 			}
 		//Animation Playing block
@@ -232,26 +255,35 @@ namespace player_scope
 			switch(collision_subject.gameObject.tag )
 			{
 				case "Axe":
-					if(Has_axe== true )
-					{
-						Destroy(collision_subject.gameObject );	//Just in case there is already an axe in hand it will kill any axe not meant to exist
-						break;
+					if (axe_pickup_timer < ZERO)
+                    {
+						if (Has_axe == true)
+						{
+							Destroy(collision_subject.gameObject);  //Just in case there is already an axe in hand it will kill any axe not meant to exist
+							axe_pickup_timer = HALF;
+							break;
+						}
+
+						else
+						{
+							//Delete Axe in world then begin to parent it to the player
+							Destroy(collision_subject.gameObject);
+
+							//Reparent the axe to the hand again.
+							AxeParent.Parent_Axe(held_axe_prefab);
+							inventory_canvas.enabled = true;
+							axe = GameObject.FindGameObjectsWithTag(axe_tag)[0];
+							Has_axe = true;
+							axe_pickup_timer = HALF;
+							break;
+						}
+
 					}
-					
 					else
-					{
-						//Delete Axe in world then begin to parent it to the player
-						Destroy(collision_subject.gameObject );
-						
-						//Reparent the axe to the hand again.
-						AxeParent.Parent_Axe(held_axe_prefab );
-						inventory_canvas.enabled = true;
-						axe =GameObject.FindGameObjectsWithTag(axe_tag )[0 ];
-						Has_axe= true;
-						
+                    {
 						break;
-					}
-				
+                    }
+					
 				case "Ground":
 					break;
 				
@@ -266,18 +298,18 @@ namespace player_scope
 			//Gets the players current position
 			Vector3 current_location= player.transform.position;
 			//Apply offset to axe throwing
-			current_location= (new Vector3(current_location.x , current_location.y*1.05f, current_location.z ) )+ transform.forward*10;
+			current_location= (new Vector3(current_location.x , current_location.y*5f, current_location.z ) )+ transform.forward*10;
 			
 			//Gets the current mouse position in the world space, then the players and normalises it to get a rotation value for which way the axe should be thrown
 			Vector3 mouse_position= GetMouse();
 			Vector3 relative_position= mouse_position- player.transform.position;
 			Quaternion current_rotation= Quaternion.LookRotation(relative_position );
-			
+
 			//Actual throwing of the axe, DO NOT CHANGE THE AXE NAMES ELSE SOME CODE WILL BREAK FOR CLEAN UP OF THE AXES
 			GameObject thrown_axe= Instantiate(thrown_axe_prefab, current_location, current_rotation ) as GameObject;
 			thrown_axe.name= "thrown_axe";
 			//Adds speed to the axe so it can be launched
-			thrown_axe.GetComponent<Rigidbody >( ).AddRelativeForce(new Vector3(0, 0, launch_velocity ) );
+			thrown_axe.GetComponent<Rigidbody >( ).AddRelativeForce(new Vector3(0, 1000, launch_velocity ) );
 		}
 		
 	// Check weapon range

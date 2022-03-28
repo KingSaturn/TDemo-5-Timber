@@ -9,6 +9,7 @@ namespace player_scope
 	//Attatched to the thrown axe, used to reparent to the hand of the lumberjack
 		public static void Parent_Axe(GameObject axe_prefab )
 		{
+			
 			if(Player.Has_axe== false )
 			{	
 				Vector3 axe_position= new Vector3(0.0f, 0.0f, 0.0f );
@@ -21,7 +22,14 @@ namespace player_scope
 
 			else
 			{
+				
 			}
 		}
-	}
+
+        private void Start()
+        {
+			transform.Rotate(90.0f, 0.0f, 0.0f);
+        }
+    }
+	
 }
