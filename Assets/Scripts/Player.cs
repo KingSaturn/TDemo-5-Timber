@@ -86,7 +86,6 @@ namespace player_scope
 		// Update is called once per frame
 		void Update()
 		{
-			Debug.Log(axe_incriment_timer + " " + axe_throwing_power);
 			if (transform.position.y > 3.0f)
             {
 				Controller.Move(new Vector3(0,-1,0));
