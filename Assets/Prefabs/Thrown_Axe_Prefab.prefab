@@ -126,6 +126,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1969741888415003897, guid: 4a0a71ee275b3654088d2381f8c0d5eb, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3ed1bd2bce2c6f4c8124bddbfbf5d2d, type: 2}
     - target: {fileID: 919132149155446097, guid: 4a0a71ee275b3654088d2381f8c0d5eb, type: 3}
       propertyPath: m_Name
       value: Axe_Clone
