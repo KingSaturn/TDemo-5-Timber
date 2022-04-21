@@ -240,7 +240,13 @@ namespace player_scope
 			float x= Input.GetAxis("Horizontal" );
 			float z= Input.GetAxis("Vertical" );
 			
-			Vector3 move=transform.right* x+ transform.forward* z;
+			Vector3 move= transform.right* x+ transform.forward* z;
+
+			// Account for diagonal movement
+			if (x != 0 && z != 0)
+            {
+				move = new Vector3(move.x * 0.5f, move.y, move.z * 0.5f);
+            }
 
 			Controller.Move(move* info.speed.GetValue()* Time.deltaTime );
 			Controller.Move(velocity* Time.deltaTime );
