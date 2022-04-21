@@ -10,7 +10,7 @@ namespace player_scope
 		public static void Parent_Axe(GameObject axe_prefab )
 		{
 			
-			if(Player.Has_axe== false )
+			if(Player.Has_axe== false || (Player.Has_axe == true && GameObject.Find("Lumber_Jack/Armature/Hand_L/held_axe") == null))
 			{	
 				Vector3 axe_position= new Vector3(0.0f, 0.0f, 0.0f );
 				Quaternion axe_rotation= Quaternion.Euler(-0.194f, 2.155f, 275.215f );

@@ -71,10 +71,9 @@ namespace player_scope
 			inventory_canvas = inventory.GetComponent<Canvas>();
 		//Camera		
 			mainCam=(GameObject.FindGameObjectsWithTag(mainCam_tag ) )[0 ].GetComponent<Camera>();
-		//Axe
-			AxeParent.Parent_Axe(held_axe_prefab );
-				
-			axe=(GameObject.FindGameObjectsWithTag(axe_tag ) )[0 ];
+		//Axe	
+			AxeParent.Parent_Axe(held_axe_prefab);
+			axe =(GameObject.FindGameObjectsWithTag(axe_tag ) )[0 ];
 				Has_axe= true;
 				charging_axe = false;
 						
@@ -194,8 +193,15 @@ namespace player_scope
             {
 				axe_pickup_timer -= Time.deltaTime;
 			}
+			// Gives the man the axe if there is no axe in the world
+			if ((GameObject.FindGameObjectsWithTag(axe_tag)[0]) == null && Has_axe == true)
+            {
+				AxeParent.Parent_Axe(held_axe_prefab);
+				axe = (GameObject.FindGameObjectsWithTag(axe_tag)[0]);
+
+			}
 		//For releasing the axe	ACTUAL THROWING CODE
-			if(Input.GetMouseButtonUp(0 ) )
+			if (Input.GetMouseButtonUp(0 ) )
 			{
 				if(Has_axe== true )
 				{
@@ -304,9 +310,8 @@ namespace player_scope
 			Vector3 current_location= player.transform.position;
 			//Apply offset to axe throwing
 			current_location= (new Vector3(current_location.x , current_location.y*5f, current_location.z ) )+ transform.forward*10;
-			
 			//Gets the current mouse position in the world space, then the players and normalises it to get a rotation value for which way the axe should be thrown
-			Vector3 mouse_position= GetMouse();
+			Vector3 mouse_position = GetMouse();
 			Vector3 relative_position= mouse_position- player.transform.position;
 			Quaternion current_rotation= Quaternion.LookRotation(relative_position );
 
@@ -315,6 +320,7 @@ namespace player_scope
 			thrown_axe.name= "thrown_axe";
 			//Adds speed to the axe so it can be launched
 			thrown_axe.GetComponent<Rigidbody >( ).AddRelativeForce(new Vector3(0, 1000, launch_velocity ) );
+			axe = thrown_axe;
 		}
 		
 	// Check weapon range
@@ -376,5 +382,12 @@ namespace player_scope
 				player.transform.forward = direction;
 			}
 		}
-	}
+
+        private void OnLevelWasLoaded(int level)
+        {
+			AxeParent.Parent_Axe(held_axe_prefab);
+		}
+
+    }
+	
 }

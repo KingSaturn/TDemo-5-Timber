@@ -935,6 +935,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 8903993727682237231, guid: 3106b1acbee5bcf4caeb94151cac548c, type: 3}
+      propertyPath: transitiontime
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3106b1acbee5bcf4caeb94151cac548c, type: 3}
 --- !u!1 &1306731241
