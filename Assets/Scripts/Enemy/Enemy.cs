@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int maxHP = 100;
+    private CharacterInfo info;
     private float timer = 0f;
     private float waitTime = 5f;
 
@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentHP = maxHP;
+
     }
     
     public void TakeDamage(int damage)
