@@ -309,7 +309,7 @@ namespace player_scope
 			//Gets the players current position
 			Vector3 current_location= player.transform.position;
 			//Apply offset to axe throwing
-			current_location= (new Vector3(current_location.x , current_location.y*5f, current_location.z ) )+ transform.forward*10;
+			current_location= (new Vector3(current_location.x , current_location.y+15f, current_location.z ) )+ transform.forward*10;
 			//Gets the current mouse position in the world space, then the players and normalises it to get a rotation value for which way the axe should be thrown
 			Vector3 mouse_position = GetMouse();
 			Vector3 relative_position= mouse_position- player.transform.position;
