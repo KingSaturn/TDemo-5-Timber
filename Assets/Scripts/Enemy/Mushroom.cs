@@ -7,14 +7,17 @@ public class Mushroom : MonoBehaviour
 	//Mushroom Vairables
 	//Prerequisites, the player must have a "Muhsroom" tag in unity.
 	//The gameObject must have a character controller
-	public static GameObject mushroom;
+	public static GameObject player;
+	private CharacterInfo info;
 	private const string mushroom_tag = "Mushroom";
 	private CharacterController Controller;
-	private float speed = 50;
 	private Vector3 velocity;
+	public float lookRadius;
+	private SphereCollider rangeCollider;
 
 
 	private bool is_neutral;
+	private bool is_moving;
 	//Animation Block
 	//The player must have an Animator component
 	private Animator mushroom_animations;
@@ -24,84 +27,34 @@ public class Mushroom : MonoBehaviour
 	void Start()
 	{
 		//PLayer    -Automatically aqquires objects no need to pass them in via public 
-		mushroom = (GameObject.FindGameObjectsWithTag(mushroom_tag))[0];    //Going to need to be set differently when spawning in the mushroom objects.
-		Controller = mushroom.GetComponent<CharacterController>();
-		mushroom_animations = mushroom.GetComponent<Animator>();
+		player = GameObject.FindGameObjectWithTag("Player");
+		info = this.GetComponent<CharacterInfo>();
+		Controller = this.GetComponent<CharacterController>();
+		rangeCollider = this.GetComponent<SphereCollider>();
+		mushroom_animations = this.GetComponent<Animator>();
 		//Need to track and set the mushrooms state ie Aggressive or not
 		//Animator value
 		mushroom_animations.SetBool("Is_Neutral", true);
 		is_neutral = true;
+		is_moving = false;
 
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-//Triggers section, you will replace these if's with AI triggers corrosponding to the actions
-	//Moving Foward
-		if(Input.GetKeyDown(KeyCode.W ) )
+		//Triggers section, you will replace these if's with AI triggers corrosponding to the actions
+		//Moving Foward
+		if (is_moving)
 		{
-			Debug.Log("W");
-			movement_animation_logger += 1;	//When pressed down, it registers the key to be used
+			movement_animation_logger = 1;
 		}
-		
-		else if(Input.GetKeyUp(KeyCode.W ) )
-		{
-			Debug.Log("No W");
-			movement_animation_logger -= 1;	//Used to unregister the key, it will decrease the counter
-		}
-		
 		else
-		{
-		}
-	//Moving To The Left
-		if(Input.GetKeyDown(KeyCode.A ) )
-		{
-			Debug.Log("No W");
-			movement_animation_logger += 1;
+        {
+			movement_animation_logger = 0;
+
 		}
 		
-		else if(Input.GetKeyUp(KeyCode.A ) )
-		{
-			Debug.Log("No W");
-			movement_animation_logger -= 1;
-		}
-		
-		else
-		{
-		}
-	//Moving To The Right
-		if(Input.GetKeyDown(KeyCode.S ) )
-		{
-			Debug.Log("No W");
-			movement_animation_logger += 1;
-		}
-		
-		else if(Input.GetKeyUp(KeyCode.S ) )
-		{
-			Debug.Log("No W");
-			movement_animation_logger -= 1;
-		}
-		
-		else
-		{
-		}
-	//Moving Backwards
-		if(Input.GetKeyDown(KeyCode.D ) )
-		{
-			Debug.Log("No W");
-			movement_animation_logger += 1;
-		}
-		
-		else if(Input.GetKeyUp(KeyCode.D ) )
-		{
-			Debug.Log("No W");
-			movement_animation_logger -= 1;
-		}
-		
-		else
-		{
-		}
 	//Attacking
 		if(Input.GetKeyDown(KeyCode.E ) )
 		{
@@ -140,16 +93,14 @@ public class Mushroom : MonoBehaviour
 		{
 		}
 	//Transforming 
-		if(Input.GetKeyDown(KeyCode.T )&& (movement_animation_logger== 0 ) )
+		if(info.currentHp != info.maxHp.GetValue())
 		{
 			switch(is_neutral )
 			{
 				case false:
-					Debug.Log("Cannot transform" );
 					break;
 				
 				default:
-					Debug.Log("Transform" );
 					mushroom_animations.SetBool("Is_Neutral", false );
 					is_neutral= false;
 					
@@ -162,9 +113,30 @@ public class Mushroom : MonoBehaviour
 		else
 		{
 		}
-	//Animation Playing block
+
+		//Movement block
+		float distance = Vector3.Distance(player.transform.position, transform.position);
+		if (distance < lookRadius)
+		{
+			if (is_neutral)
+			{
+				FaceTarget();
+			}
+			if (!is_neutral)
+			{
+				is_moving = true;
+				FaceTarget();
+				Controller.Move(transform.forward * info.speed.GetValue() * Time.deltaTime);
+			}
+		}
+		else
+		{
+			is_moving = false;
+		}
+
+		//Animation Playing block
 		//Based on inputs to see if the animations can play or not 
-		if(movement_animation_logger== 0 )	//When the counter is no longer 0 it is valid so walking stops
+		if (movement_animation_logger== 0 )	//When the counter is no longer 0 it is valid so walking stops
 		{
 			switch(is_neutral )
 			{
@@ -195,14 +167,18 @@ public class Mushroom : MonoBehaviour
 					break;
 			}
 		}
-		
-	//Movement block
-		float x= Input.GetAxis("Horizontal" );
-		float z= Input.GetAxis("Vertical" );
-		
-		Vector3 move=transform.right* x+ transform.forward* z;
-
-		Controller.Move(move* speed* Time.deltaTime );
-		Controller.Move(velocity* Time.deltaTime );	
 	}
+
+    private void FaceTarget()
+	{
+		Vector3 direction = (player.transform.position - transform.position).normalized;
+		Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+		transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 2);
+	}
+
+    private void OnDrawGizmosSelected()
+    {
+		Gizmos.color = Color.red;
+		Gizmos.DrawWireSphere(transform.position, lookRadius);
+    }
 }

@@ -6,7 +6,8 @@ namespace player_scope
 {
 	public class AxeParent : MonoBehaviour
 	{
-	//Attatched to the thrown axe, used to reparent to the hand of the lumberjack
+		//Attatched to the thrown axe, used to reparent to the hand of the lumberjack
+
 		public static void Parent_Axe(GameObject axe_prefab )
 		{
 			
@@ -25,11 +26,6 @@ namespace player_scope
 				
 			}
 		}
-
-        private void Start()
-        {
-			transform.Rotate(90.0f, 0.0f, 0.0f);
-        }
     }
-	
+
 }

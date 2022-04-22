@@ -145,6 +145,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 496918998404528855, guid: cad1e144a50a84e4fa9606a963580d77, type: 3}
+      propertyPath: m_Size.z
+      value: 14.4
+      objectReference: {fileID: 0}
     - target: {fileID: 730710017828342564, guid: cad1e144a50a84e4fa9606a963580d77, type: 3}
       propertyPath: m_Name
       value: Lumber_Jack

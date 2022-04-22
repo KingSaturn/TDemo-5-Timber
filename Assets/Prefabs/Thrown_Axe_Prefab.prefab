@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 3143109426485943151}
   - component: {fileID: 4829806064423556284}
   - component: {fileID: 882682105226442131}
+  - component: {fileID: 4371859831364710620}
   - component: {fileID: 8384303855455796692}
+  - component: {fileID: 9194383649552312373}
   m_Layer: 0
   m_Name: Thrown_Axe_Prefab
   m_TagString: Axe
@@ -63,6 +65,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7.333642, y: 21.243496, z: 3.3471024}
   m_Center: {x: -1.4472451, y: 10.121748, z: 0.20270073}
+--- !u!65 &4371859831364710620
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3289841366799913441}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.45, y: 26.3, z: 4.3}
+  m_Center: {x: -1.447245, y: 11.8, z: 0.2027007}
 --- !u!114 &8384303855455796692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,6 +90,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4abb4e933ab8d4f45aceab19bc878317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigidbody: {fileID: 0}
+--- !u!114 &9194383649552312373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3289841366799913441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc6b331846678b34296177dbc056ec87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody: {fileID: 0}
 --- !u!1001 &7409129228536170804
 PrefabInstance:
   m_ObjectHideFlags: 0

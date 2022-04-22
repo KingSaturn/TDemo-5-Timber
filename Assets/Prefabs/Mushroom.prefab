@@ -9,10 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 549998496812862831}
-  - component: {fileID: 12180138476890758}
   - component: {fileID: 12180138476890753}
   - component: {fileID: 12180138476890752}
+  - component: {fileID: 2056886264}
+  - component: {fileID: 2056886265}
   - component: {fileID: 12180138476890754}
+  - component: {fileID: 582694289054391656}
   m_Layer: 0
   m_Name: Mushroom
   m_TagString: Mushroom
@@ -36,19 +38,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &12180138476890758
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 930604740087633877}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!143 &12180138476890753
 CharacterController:
   m_ObjectHideFlags: 0
@@ -86,6 +75,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!136 &2056886264
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930604740087633877}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 6.4
+  m_Height: 44.2
+  m_Direction: 1
+  m_Center: {x: 0, y: 19.15, z: 0}
+--- !u!65 &2056886265
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930604740087633877}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20.5, y: 35.6, z: 16.06}
+  m_Center: {x: 0, y: 18.5, z: 0}
 --- !u!114 &12180138476890754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,6 +114,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8da2d5f3601e054180f36e42d4d183c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lookRadius: 0
+--- !u!114 &582694289054391656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930604740087633877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e87ec0fc25bfc942875aa19d4efa18d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHp: 0
+  gravity: -9.81
+  maxHp:
+    baseValue: 100
+  attack:
+    baseValue: 2
+  speed:
+    baseValue: 50
 --- !u!1 &1305870218006791840
 GameObject:
   m_ObjectHideFlags: 0
