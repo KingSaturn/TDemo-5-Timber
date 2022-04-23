@@ -385,7 +385,10 @@ namespace player_scope
 
         private void OnLevelWasLoaded(int level)
         {
-			AxeParent.Parent_Axe(held_axe_prefab);
+			if (axe != null)
+            {
+				AxeParent.Parent_Axe(held_axe_prefab);
+            }
 		}
 
     }

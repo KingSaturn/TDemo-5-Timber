@@ -6,22 +6,12 @@ using UnityEngine.SceneManagement;
 public class LevelLoader : MonoBehaviour
 {
     public Animator animator;
+    public SaveSerial saver;
     public float transitiontime;
 
     private void Update()
     {
-        //if (Input.GetKeyDown("1"))
-        //{
-        //    LoadLevel(1);
-        //}
-        //if (Input.GetKeyDown("0"))
-        //{
-        //    LoadLevel(0);
-        //}
-        //if (Input.GetKeyDown("2"))
-        //{
-        //    LoadLevel(2);
-        //}
+      
     }
 
     public void LoadLevel(int index)    
@@ -31,6 +21,8 @@ public class LevelLoader : MonoBehaviour
 
     IEnumerator IELoadLevel(int index)
     {
+        saver.SaveGame();
+
         animator.SetTrigger("Load");
 
         yield return new WaitForSeconds(transitiontime);

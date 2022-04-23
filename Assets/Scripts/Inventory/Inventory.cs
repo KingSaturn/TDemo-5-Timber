@@ -1,15 +1,56 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 namespace Timber.InventorySystem
 {
     public class Inventory : MonoBehaviour
     {
         public event Action OnIvnChange;
-        public List<InventoryItem> items = new List<InventoryItem>();
+        public List<InventoryItem> items;
         //subject to change
         public int maxInventorySize = 20;
+        private void Start()
+        {
+            if (File.Exists(Path.Combine(Application.persistentDataPath, "/SaveData.txt")))
+            {
+                Debug.Log("Loaded Items");
+                string input = File.ReadAllText(Path.Combine(Application.persistentDataPath, "/SaveData.txt"));
+                SaveData data = JsonUtility.FromJson<SaveData>(input);
+                items = data.items;
+                OnIvnChange?.Invoke();
+            }
+            else
+            {
+                Debug.Log("No Save");
+                items = new List<InventoryItem>();
+            }
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                int rnd = UnityEngine.Random.Range(1, 5);
+                while (rnd == 3 && GetFirstItemIndex(3) != -1)
+                {
+                    rnd = UnityEngine.Random.Range(1, 5);
+                }
+                AddItem(rnd, 1);
+                Debug.Log(items[0]);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha9))
+            {
+                if (File.Exists(Path.Combine(Application.persistentDataPath, "/SaveData.txt")))
+                {
+                    Debug.Log("Save Deleted");
+                    File.Delete(Path.Combine(Application.persistentDataPath, "/SaveData.txt"));
+                }
+            }
+        }
+
         public void SwapItems(int firstItemIndex, int secondItemIndex)
         {
             InventoryItem index1Copy = new InventoryItem(items[firstItemIndex]);

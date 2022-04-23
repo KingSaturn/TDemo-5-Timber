@@ -1,5 +1,6 @@
 namespace Timber.InventorySystem
 {
+    [System.Serializable]
     public class InventoryItem : ItemData
     {
         public int currentStack;

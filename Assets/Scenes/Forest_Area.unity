@@ -658,10 +658,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2178454091507178281, guid: ff7870a4eb342274c90185abfec276eb, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4980061099482580538, guid: ff7870a4eb342274c90185abfec276eb, type: 3}
       propertyPath: m_Name
       value: Player
