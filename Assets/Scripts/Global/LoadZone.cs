@@ -22,7 +22,4 @@ public class LoadZone : MonoBehaviour
             loader.LoadLevel(levelIndex,id);
         }
     }
-
-
-
 }

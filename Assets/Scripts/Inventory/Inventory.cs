@@ -12,7 +12,7 @@ namespace Timber.InventorySystem
         public List<InventoryItem> items;
         //subject to change
         public int maxInventorySize = 20;
-        private void Start()
+        private void Awake()
         {
             if (File.Exists(Path.Combine(Application.persistentDataPath, "/SaveData.txt")))
             {
