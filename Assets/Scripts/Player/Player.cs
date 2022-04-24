@@ -243,6 +243,10 @@ namespace player_scope
 			{
 				human_animations.SetBool("isMoving" ,false );
 			}
+			if (movement_animation_logger > 1)
+            {
+				movement_animation_logger = 1;
+			}
 		//Movement block
 			float x= Input.GetAxis("Horizontal" );
 			float z= Input.GetAxis("Vertical" );
@@ -318,9 +322,17 @@ namespace player_scope
 
 			//Actual throwing of the axe, DO NOT CHANGE THE AXE NAMES ELSE SOME CODE WILL BREAK FOR CLEAN UP OF THE AXES
 			GameObject thrown_axe= Instantiate(thrown_axe_prefab, current_location, current_rotation ) as GameObject;
+			ThrownAxe axeScript = thrown_axe.GetComponent<ThrownAxe>();
 			thrown_axe.name= "thrown_axe";
 			//Adds speed to the axe so it can be launched
-			thrown_axe.GetComponent<Rigidbody >( ).AddRelativeForce(new Vector3(0, 1000, launch_velocity ) );
+			if (axeScript.inWall == false)
+            {
+				thrown_axe.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, 1000, launch_velocity));
+			}
+			if (axeScript.inWall)
+            {
+				thrown_axe.transform.position = transform.position - transform.forward *25 + transform.up*20;
+			}				
 			axe = thrown_axe;
 		}
 		
