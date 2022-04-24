@@ -13,8 +13,9 @@ public class Mushroom : MonoBehaviour
 	private CharacterController Controller;
 	private Vector3 velocity;
 	public float lookRadius;
+	private float lookSpeed = 2.0f;
 	public float attackRadius;
-	public float attackTimer;
+	private float attackTimer;
 	private SphereCollider rangeCollider;
 
 
@@ -31,7 +32,6 @@ public class Mushroom : MonoBehaviour
     private void Awake()
     {
 		//PLayer    -Automatically aqquires objects no need to pass them in via public 
-		player = GameObject.FindGameObjectWithTag("Player");
 		info = this.GetComponent<CharacterInfo>();
 		Controller = this.GetComponent<CharacterController>();
 		rangeCollider = this.GetComponent<SphereCollider>();
@@ -43,6 +43,11 @@ public class Mushroom : MonoBehaviour
 		is_neutral = true;
 		is_moving = false;
 		is_attacking = false;
+	}
+
+    private void Start()
+    {
+		player = GameObject.FindGameObjectWithTag("Player");
 	}
 
     // Update is called once per frame
@@ -108,7 +113,8 @@ public class Mushroom : MonoBehaviour
 				default:
 					mushroom_animations.SetBool("Is_Neutral", false );
 					is_neutral= false;
-					
+
+					lookSpeed = 7;
 					mushroom_animations.SetTrigger("Transform" );
 					break;
 			}
@@ -192,7 +198,7 @@ public class Mushroom : MonoBehaviour
 	{
 		Vector3 direction = (player.transform.position - transform.position).normalized;
 		Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-		transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 2);
+		transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * lookSpeed);
 	}
 
     private void OnDrawGizmosSelected()
