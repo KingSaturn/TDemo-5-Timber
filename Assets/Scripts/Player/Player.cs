@@ -243,10 +243,6 @@ namespace player_scope
 			{
 				human_animations.SetBool("isMoving" ,false );
 			}
-			if (movement_animation_logger > 1)
-            {
-				movement_animation_logger = 1;
-			}
 		//Movement block
 			float x= Input.GetAxis("Horizontal" );
 			float z= Input.GetAxis("Vertical" );

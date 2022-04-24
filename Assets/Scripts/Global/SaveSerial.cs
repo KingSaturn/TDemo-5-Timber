@@ -9,14 +9,15 @@ using Timber.InventorySystem;
 
 public class SaveSerial : MonoBehaviour
 {
-	public void SaveGame()
+	public void SaveGame(int scene, int id)
 	{
 		SaveData data = new SaveData();
 		GameObject newPlayer = GameObject.FindGameObjectWithTag("Player");
 		Inventory newInventory = newPlayer.GetComponent<Inventory>();
 		data.player = newPlayer;
 		data.items = newInventory.items;
-		data.scene = SceneManager.GetActiveScene().buildIndex;
+		data.scene = scene;
+		data.loadId = id;
 		string output = JsonUtility.ToJson(data);
 		File.WriteAllText(Path.Combine(Application.persistentDataPath,"/SaveData.txt"), output);
 	}
@@ -27,7 +28,6 @@ class SaveData
 {
     public GameObject player;
 	public List<InventoryItem> items;
-	public InventoryItem item;
 	public int scene;
-
+	public int loadId;
 }

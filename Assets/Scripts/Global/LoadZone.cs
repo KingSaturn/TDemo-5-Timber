@@ -7,11 +7,11 @@ public class LoadZone : MonoBehaviour
     private GameObject player;
     private LevelLoader loader;
     public int levelIndex;
+    public int id;
 
     // Start is called before the first frame update
     private void Awake()
     {
-        player = GameObject.FindGameObjectsWithTag("Player")[0];
         loader = GameObject.FindObjectOfType<LevelLoader>();
     }
 
@@ -19,7 +19,7 @@ public class LoadZone : MonoBehaviour
     {
        if (other.CompareTag("Player"))
         {
-            loader.LoadLevel(levelIndex);
+            loader.LoadLevel(levelIndex,id);
         }
     }
 

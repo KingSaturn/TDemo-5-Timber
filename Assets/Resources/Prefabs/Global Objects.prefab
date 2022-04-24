@@ -295,8 +295,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3106b1acbee5bcf4caeb94151cac548c, type: 3}
+--- !u!1 &7814477763600863967 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2505454799516116627, guid: 3106b1acbee5bcf4caeb94151cac548c, type: 3}
+  m_PrefabInstance: {fileID: 5672199901927896140}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &7814477763600863966 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2505454799516116626, guid: 3106b1acbee5bcf4caeb94151cac548c, type: 3}
   m_PrefabInstance: {fileID: 5672199901927896140}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &114023104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7814477763600863967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8851093cf9647bb459c3179164eccd95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idCoords:
+  - {x: -588.43787, y: 0.2240448, z: -609.4009}
+  - {x: 280, y: 0.2240448, z: 976}
+  - {x: -421, y: 0.22406006, z: -840}
+  - {x: -12, y: 2.3499985, z: 172}
