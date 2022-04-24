@@ -243,6 +243,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom
       objectReference: {fileID: 0}
+    - target: {fileID: 987673336487896039, guid: c136f54b2b3f6bb4b967cd76a6ba7392, type: 3}
+      propertyPath: m_Radius
+      value: 16.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 8291706485420455071, guid: c136f54b2b3f6bb4b967cd76a6ba7392, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 21.699997
+      objectReference: {fileID: 0}
     - target: {fileID: 8405782383479347521, guid: c136f54b2b3f6bb4b967cd76a6ba7392, type: 3}
       propertyPath: m_IsTrigger
       value: 1

@@ -7,10 +7,12 @@ public class ThrownAxe : MonoBehaviour
     private Rigidbody rigidbody;
     private bool canDamage = true;
 
-    // Start is called before the first frame update
-    private void Start()
+    private void Awake()
     {
         rigidbody = this.GetComponent<Rigidbody>();
+    }
+    private void Start()
+    {
         transform.Rotate(new Vector3(90, 0, 0));
     }
 
