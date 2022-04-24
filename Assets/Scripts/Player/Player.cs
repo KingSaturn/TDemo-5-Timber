@@ -73,12 +73,13 @@ namespace player_scope
 			mainCam=(GameObject.FindGameObjectsWithTag(mainCam_tag ) )[0 ].GetComponent<Camera>();
 		//Axe	
 			AxeParent.Parent_Axe(held_axe_prefab);
-			axe =(GameObject.FindGameObjectsWithTag(axe_tag ) )[0 ];
+			axe =GameObject.FindGameObjectsWithTag("FirePoint")[0];
 				Has_axe= true;
 				charging_axe = false;
 						
 			axe_throwing_power= AXE_MIN_POWER;
 				axe_incriment_timer= ZERO;
+			transform.rotation = Quaternion.Euler(0, 0, 0);
 				axe_pickup_timer = HALF;
 		}
 
