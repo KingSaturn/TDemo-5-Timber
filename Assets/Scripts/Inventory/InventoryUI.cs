@@ -13,6 +13,15 @@ public class InventoryUI : MonoBehaviour
     private Inventory inventory;
     private PlayerInfo info;
     private int curserHover = -1;
+    private void Awake()
+    {
+        player = (GameObject.FindGameObjectsWithTag("Player"))[0];
+        info = player.GetComponent<PlayerInfo>();
+        inventory = player.GetComponent<Inventory>();
+
+        inventory.OnIvnChange += OnInvChange;
+        GenerateEmptySlots();
+    }
 
     public int GetCurserHover()
     {
@@ -48,15 +57,6 @@ public class InventoryUI : MonoBehaviour
             }
             slots[i].SetItem(item);
         }
-    }
-    public void Start()
-    {
-        player = (GameObject.FindGameObjectsWithTag("Player"))[0];
-        info = player.GetComponent<PlayerInfo>();
-        inventory = player.GetComponent<Inventory>();
-
-        inventory.OnIvnChange += OnInvChange;
-        GenerateEmptySlots();
     }
 
     private void OnInvChange()

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    // Currently not used. Will keep just in case
     private CharacterInfo info;
     private float timer = 0f;
     private float waitTime = 5f;

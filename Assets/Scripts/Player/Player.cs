@@ -57,11 +57,11 @@ namespace player_scope
 				
 	//Ground
 		public LayerMask groundMask; //Make a ground parent object, put grond in there and assign the tag for raycasting.
-			
-	// Start is called before the first frame update
-		void Start()
-		{
-		//Player	-Automatically aqquires objects no need to pass them in via public 
+
+        // Start is called before the first frame update
+        private void Awake()
+        {
+            //Player	-Automatically aqquires objects no need to pass them in via public 
 			player=(GameObject.FindGameObjectsWithTag(player_tag) )[0];
 				Controller=player.GetComponent<CharacterController>();
 				human_animations=player.GetComponent<Animator>();
@@ -81,10 +81,10 @@ namespace player_scope
 				axe_incriment_timer= ZERO;
 			transform.rotation = Quaternion.Euler(0, 0, 0);
 				axe_pickup_timer = HALF;
-		}
+        }
 
-		// Update is called once per frame
-		void Update()
+        // Update is called once per frame
+        void Update()
 		{
 			if (transform.position.y > 3.0f)
             {

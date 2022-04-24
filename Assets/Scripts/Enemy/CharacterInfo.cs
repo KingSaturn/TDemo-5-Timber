@@ -27,6 +27,7 @@ public class CharacterInfo : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHp -= Mathf.Clamp(damage, 0, int.MaxValue);
+        Debug.Log(currentHp);
     }
 
     public void DeathState()

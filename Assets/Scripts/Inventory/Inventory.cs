@@ -39,7 +39,6 @@ namespace Timber.InventorySystem
                     rnd = UnityEngine.Random.Range(1, 5);
                 }
                 AddItem(rnd, 1);
-                Debug.Log(items[0]);
             }
             if (Input.GetKeyDown(KeyCode.Alpha9))
             {

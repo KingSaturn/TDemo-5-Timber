@@ -19,7 +19,6 @@ public class SaveSerial : MonoBehaviour
 		data.scene = SceneManager.GetActiveScene().buildIndex;
 		string output = JsonUtility.ToJson(data);
 		File.WriteAllText(Path.Combine(Application.persistentDataPath,"/SaveData.txt"), output);
-		Debug.Log("Game data saved!");
 	}
 }
 

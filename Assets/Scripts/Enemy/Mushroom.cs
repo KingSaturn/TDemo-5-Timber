@@ -13,35 +13,40 @@ public class Mushroom : MonoBehaviour
 	private CharacterController Controller;
 	private Vector3 velocity;
 	public float lookRadius;
+	public float attackRadius;
+	public float attackTimer;
 	private SphereCollider rangeCollider;
 
 
 	private bool is_neutral;
 	private bool is_moving;
+	private bool is_attacking;
 	//Animation Block
 	//The player must have an Animator component
 	private Animator mushroom_animations;
 	private int movement_animation_logger;    //Used for keeping track of if the mushroom is moving
+	private EnemyAttack attack;
 
-	// Start is called before the first frame update
-	void Start()
-	{
+    // Start is called before the first frame update
+    private void Awake()
+    {
 		//PLayer    -Automatically aqquires objects no need to pass them in via public 
 		player = GameObject.FindGameObjectWithTag("Player");
 		info = this.GetComponent<CharacterInfo>();
 		Controller = this.GetComponent<CharacterController>();
 		rangeCollider = this.GetComponent<SphereCollider>();
 		mushroom_animations = this.GetComponent<Animator>();
+		attack = this.GetComponentInChildren<EnemyAttack>();
 		//Need to track and set the mushrooms state ie Aggressive or not
 		//Animator value
 		mushroom_animations.SetBool("Is_Neutral", true);
 		is_neutral = true;
 		is_moving = false;
-
+		is_attacking = false;
 	}
 
-	// Update is called once per frame
-	void Update()
+    // Update is called once per frame
+    void Update()
 	{
 		//Triggers section, you will replace these if's with AI triggers corrosponding to the actions
 		//Moving Foward
@@ -61,7 +66,7 @@ public class Mushroom : MonoBehaviour
 			if(is_neutral== false )
 			{
 				Debug.Log("Attack" );
-				mushroom_animations.SetTrigger("IsAttacking" );	//Pass in the parameter from the animator window it will trigger to start
+				mushroom_animations.SetTrigger("IsAttacking");	//Pass in the parameter from the animator window it will trigger to start
 			}
 			
 			else
@@ -124,9 +129,23 @@ public class Mushroom : MonoBehaviour
 			}
 			if (!is_neutral)
 			{
+				if (distance < attackRadius && attackTimer <= 0)
+				{
+					attackTimer = 0.8f;
+					mushroom_animations.SetTrigger("IsAttacking");
+					StartCoroutine(DamagePlayer());
+
+                }
 				is_moving = true;
 				FaceTarget();
-				Controller.Move(transform.forward * info.speed.GetValue() * Time.deltaTime);
+				if (attackTimer <= 0)
+                {
+					Controller.Move(transform.forward * info.speed.GetValue() * Time.deltaTime);
+				}
+				if (attackTimer > 0)
+				{
+					attackTimer -= Time.deltaTime;
+				}
 			}
 		}
 		else
@@ -180,5 +199,14 @@ public class Mushroom : MonoBehaviour
     {
 		Gizmos.color = Color.red;
 		Gizmos.DrawWireSphere(transform.position, lookRadius);
+		Gizmos.color = Color.green;
+		Gizmos.DrawWireSphere(transform.position, attackRadius);
+	}
+
+	IEnumerator DamagePlayer()
+    {
+		yield return new WaitForSeconds(0.4f);
+		Debug.Log("DAMAGED");
+		attack.DealDamage(10);
     }
 }

@@ -195,6 +195,10 @@ PrefabInstance:
       propertyPath: lookRadius
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 12180138476890754, guid: c136f54b2b3f6bb4b967cd76a6ba7392, type: 3}
+      propertyPath: attackRadius
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 549998496812862831, guid: c136f54b2b3f6bb4b967cd76a6ba7392, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -733,7 +737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2178454090785526560, guid: ff7870a4eb342274c90185abfec276eb, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1089
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2178454090785526560, guid: ff7870a4eb342274c90185abfec276eb, type: 3}
       propertyPath: m_SizeDelta.y
@@ -741,7 +745,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2178454090785526560, guid: ff7870a4eb342274c90185abfec276eb, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 544.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2178454090785526560, guid: ff7870a4eb342274c90185abfec276eb, type: 3}
       propertyPath: m_AnchoredPosition.y
