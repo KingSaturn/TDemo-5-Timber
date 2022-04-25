@@ -66,7 +66,7 @@ namespace player_scope
 				Controller=player.GetComponent<CharacterController>();
 				human_animations=player.GetComponent<Animator>();
 				info = player.GetComponent<PlayerInfo>();
-				player_hand= GameObject.Find("Lumber_Jack/Armature/Hand_L/Hand_L_end" );
+				player_hand= GameObject.Find("Lumber_Jack/Armature/Hand_L/Hand_L_end");
 				inventory = GameObject.Find("Lumber_Jack/Inventory");
 			inventory_canvas = inventory.GetComponent<Canvas>();
 		//Camera		
