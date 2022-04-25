@@ -7,6 +7,7 @@ public class WorldItem : MonoBehaviour
 {
     public int id;
     public int amount;
+    private float startingY;
     private Mesh mesh;
     private MeshFilter meshComponent;
     private float meshScale;
@@ -15,7 +16,7 @@ public class WorldItem : MonoBehaviour
     private GameObject player;
     private Inventory inventory;
 
-    WorldItem(int passedId, int passedAmount)
+    public WorldItem(int passedId, int passedAmount)
     {
         ItemData data = ItemDatabase.GetItemData(passedId);
         InventoryItem itemToAdd = new InventoryItem(data);
@@ -27,13 +28,14 @@ public class WorldItem : MonoBehaviour
 
     private void Awake()
     {
+        startingY = transform.position.y;
         meshComponent = this.GetComponent<MeshFilter>();
         materialComponent = this.GetComponent<MeshRenderer>();
         ItemData data = ItemDatabase.GetItemData(id);
         InventoryItem itemToAdd = new InventoryItem(data);
         mesh = data.model;
         material = data.material;
-        
+
     }
 
     private void Start()
@@ -46,7 +48,8 @@ public class WorldItem : MonoBehaviour
 
     private void Update()
     {
-        transform.position = new Vector3(transform.position.x, transform.position.y + (Mathf.Sin(Time.realtimeSinceStartup * 2) * 0.1f), transform.position.z);
+        float sinMovement = startingY + (Mathf.Sin(Time.realtimeSinceStartup * 2) * 10);
+        transform.position = new Vector3(transform.position.x, sinMovement, transform.position.z);
         transform.Rotate(0, Time.deltaTime * 100, 0);
     }
 

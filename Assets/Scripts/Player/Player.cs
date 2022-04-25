@@ -58,6 +58,7 @@ namespace player_scope
 	//Ground
 		public LayerMask groundMask; //Make a ground parent object, put grond in there and assign the tag for raycasting.
 
+		private ItemSpawner itemSpawner;
         // Start is called before the first frame update
         private void Awake()
         {
@@ -81,6 +82,8 @@ namespace player_scope
 				axe_incriment_timer= ZERO;
 			transform.rotation = Quaternion.Euler(0, 0, 0);
 				axe_pickup_timer = HALF;
+
+			itemSpawner = FindObjectOfType<ItemSpawner>();
         }
 
         // Update is called once per frame
@@ -158,6 +161,7 @@ namespace player_scope
 			if(Input.GetKeyDown(KeyCode.T )&& (movement_animation_logger== 0 ) )
 			{
 				human_animations.SetTrigger("isIdle" );
+				itemSpawner.SpawnItem(new Vector3(-21, 45, -93), 1, 1);
 			}
 			
 		//Mouse One THROW CHARGE UP CODE
