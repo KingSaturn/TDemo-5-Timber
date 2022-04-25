@@ -29,6 +29,11 @@ namespace Timber.InventorySystem
             }
         }
 
+        private void Start()
+        {
+            OnIvnChange?.Invoke();
+        }
+
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
