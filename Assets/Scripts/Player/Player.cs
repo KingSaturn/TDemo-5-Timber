@@ -68,7 +68,7 @@ namespace player_scope
 				human_animations=player.GetComponent<Animator>();
 				info = player.GetComponent<PlayerInfo>();
 				player_hand= GameObject.Find("Lumber_Jack/Armature/Hand_L/Hand_L_end");
-				inventory = GameObject.Find("Lumber_Jack/Inventory");
+				inventory = GameObject.Find("Lumber_Jack/Menus/Inventory");
 			inventory_canvas = inventory.GetComponent<Canvas>();
 		//Camera		
 			mainCam=(GameObject.FindGameObjectsWithTag(mainCam_tag ) )[0 ].GetComponent<Camera>();
@@ -89,6 +89,10 @@ namespace player_scope
         // Update is called once per frame
         void Update()
 		{
+			if (PauseMenu.isPaused)
+            {
+				return;
+            }
 			if (transform.position.y > 3.0f)
             {
 				Controller.Move(new Vector3(0,-1,0));

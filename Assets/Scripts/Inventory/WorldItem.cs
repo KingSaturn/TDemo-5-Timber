@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Timber.InventorySystem;
+using player_scope;
 
 public class WorldItem : MonoBehaviour
 {
@@ -48,6 +49,10 @@ public class WorldItem : MonoBehaviour
 
     private void Update()
     {
+        if (PauseMenu.isPaused)
+        {
+            return;
+        }
         float sinMovement = startingY + (Mathf.Sin(Time.realtimeSinceStartup * 2) * 10);
         transform.position = new Vector3(transform.position.x, sinMovement, transform.position.z);
         transform.Rotate(0, Time.deltaTime * 100, 0);
@@ -55,7 +60,7 @@ public class WorldItem : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && player_scope.Player.Has_axe)
+        if (other.CompareTag("Player") && Player.Has_axe)
         {
             inventory.AddItem(id, amount);
             Destroy(this.gameObject);

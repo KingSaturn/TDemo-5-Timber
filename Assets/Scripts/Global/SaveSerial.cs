@@ -9,7 +9,7 @@ using Timber.InventorySystem;
 
 public class SaveSerial : MonoBehaviour
 {
-	public void SaveGame(int scene, int id)
+	public static void SaveGame(int scene, int id)
 	{
 		SaveData data = new SaveData();
 		GameObject newPlayer = GameObject.FindGameObjectWithTag("Player");

@@ -8,7 +8,6 @@ using System.Runtime.Serialization.Formatters.Binary;
 public class LevelLoader : MonoBehaviour
 {
     public Animator animator;
-    public SaveSerial saver;
     private LevelInfo info;
     public float transitiontime;
     public int spawnId = 0;
@@ -42,7 +41,7 @@ public class LevelLoader : MonoBehaviour
 
     IEnumerator IELoadLevel(int index, int id)
     {
-        saver.SaveGame(index, id);
+        SaveSerial.SaveGame(index, id);
 
         animator.SetTrigger("Load");
 

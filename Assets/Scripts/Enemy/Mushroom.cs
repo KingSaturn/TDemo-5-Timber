@@ -53,6 +53,10 @@ public class Mushroom : MonoBehaviour
     // Update is called once per frame
     void Update()
 	{
+		if (PauseMenu.isPaused)
+		{
+			return;
+		}
 		//Triggers section, you will replace these if's with AI triggers corrosponding to the actions
 		//Moving Foward
 		if (is_moving)
