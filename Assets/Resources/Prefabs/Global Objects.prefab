@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGlobal: 1
-  priority: 0
+  priority: 1
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: e42308844242bc646bd6780f542a746c, type: 2}
@@ -406,7 +406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idCoords:
-  - {x: -588.43787, y: 0.2240448, z: -609.4009}
+  - {x: -609.90875, y: 0.2240448, z: -644.4617}
   - {x: 280, y: 0.2240448, z: 976}
   - {x: -421, y: 0.22406006, z: -840}
-  - {x: -12, y: 2.3499985, z: 172}
+  - {x: 568.1823, y: 0.2240448, z: 676.9697}

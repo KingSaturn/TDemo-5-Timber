@@ -24,7 +24,7 @@ public class LevelLoader : MonoBehaviour
         }
         else
         {
-            Instantiate(Resources.Load("Prefabs/Player") as GameObject, new Vector3(0,50,0), Quaternion.Euler(0, 0, 0));
+            Instantiate(Resources.Load("Prefabs/Player") as GameObject, new Vector3(0,1,0), Quaternion.Euler(0, 0, 0));
         }   
     }
 
