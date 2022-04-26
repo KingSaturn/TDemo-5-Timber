@@ -55,7 +55,7 @@ public class WorldItem : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && GameObject.Find("Lumber_Jack/Armature/Hand_L/held_axe") != null)
+        if (other.CompareTag("Player") && player_scope.Player.Has_axe)
         {
             inventory.AddItem(id, amount);
             Destroy(this.gameObject);
