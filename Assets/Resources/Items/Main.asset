@@ -17,27 +17,23 @@ MonoBehaviour:
     name: Oak Log
     icon: {fileID: 21300000, guid: b1507baf58bd2b6418f0c187af5c6b65, type: 3}
     maxStack: 10
-    model: {fileID: -4646170020322143244, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
-    modelScale: 100
-    material: {fileID: 2100000, guid: f1e1c794fe43bd348ac09ee90a7116c1, type: 2}
+    model: {fileID: -951608786083511892, guid: 5a425d82e4cba2349b77959b68683c24, type: 3}
+    material: {fileID: 2100000, guid: c470f95706c8c5f4fb1cb77276243a06, type: 2}
   - id: 2
     name: Dead Log
     icon: {fileID: 21300000, guid: f3dc081df0880c54d90313c52e7aed07, type: 3}
     maxStack: 10
-    model: {fileID: 0}
-    modelScale: 1
-    material: {fileID: 0}
+    model: {fileID: -2128599272216676504, guid: 73259ab67d30b37459d579f70b647883, type: 3}
+    material: {fileID: 2100000, guid: 1bb08d0cdcfd6eb4c8bf5377f4c914ab, type: 2}
   - id: 3
     name: Axe
     icon: {fileID: 21300000, guid: ef231e22ebc8cd24faf50920cdae39f1, type: 3}
     maxStack: 1
     model: {fileID: 0}
-    modelScale: 1
     material: {fileID: 0}
   - id: 4
     name: Dildo
     icon: {fileID: 21300000, guid: baca41270f49e2247ac4e0e8e524acb8, type: 3}
     maxStack: 3
     model: {fileID: 0}
-    modelScale: 1
     material: {fileID: 0}

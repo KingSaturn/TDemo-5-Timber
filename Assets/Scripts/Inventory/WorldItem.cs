@@ -17,7 +17,7 @@ public class WorldItem : MonoBehaviour
     private GameObject player;
     private Inventory inventory;
 
-    public WorldItem(int passedId, int passedAmount)
+    public void SetWorldItem (int passedId, int passedAmount)
     {
         ItemData data = ItemDatabase.GetItemData(passedId);
         InventoryItem itemToAdd = new InventoryItem(data);
@@ -32,11 +32,13 @@ public class WorldItem : MonoBehaviour
         startingY = transform.position.y;
         meshComponent = this.GetComponent<MeshFilter>();
         materialComponent = this.GetComponent<MeshRenderer>();
-        ItemData data = ItemDatabase.GetItemData(id);
-        InventoryItem itemToAdd = new InventoryItem(data);
-        mesh = data.model;
-        material = data.material;
-
+        if (mesh == null)
+        {
+            ItemData data = ItemDatabase.GetItemData(id);
+            InventoryItem itemToAdd = new InventoryItem(data);
+            mesh = data.model;
+            material = data.material;
+        }
     }
 
     private void Start()

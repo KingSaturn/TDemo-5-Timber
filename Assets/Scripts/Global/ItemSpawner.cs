@@ -7,8 +7,8 @@ public class ItemSpawner : MonoBehaviour
     public void SpawnItem(Vector3 location, int id, int amount)
     {
         GameObject item = Resources.Load("Prefabs/Item") as GameObject;
-        WorldItem itemData = item.GetComponent<WorldItem>();
-        itemData = new WorldItem(id, amount);
-        Instantiate(item, location, Quaternion.Euler(0, 0, 0));
+        GameObject spawnedItem = Instantiate(item, location, Quaternion.Euler(0, 0, 0));
+        WorldItem itemData = spawnedItem.GetComponent<WorldItem>();
+        itemData.SetWorldItem(id, amount);
     }
 }

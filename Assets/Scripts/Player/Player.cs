@@ -136,9 +136,9 @@ namespace player_scope
 			{
 				movement_animation_logger-= 1;
 			}
-			
-		//E Key ATTACK BUTTON
-			if(Input.GetKeyDown(KeyCode.E ) )
+
+			//E Key ATTACK BUTTON
+			if (Input.GetKeyDown(KeyCode.E) && !PauseMenu.isPaused)
 			{
 				if(Has_axe== true )
 				{
@@ -151,7 +151,7 @@ namespace player_scope
 			}
 			
 		//R Key TALKING BUTTON
-			if(Input.GetKeyDown(KeyCode.R )&& (movement_animation_logger== 0 ) )
+			if(Input.GetKeyDown(KeyCode.R )&& (movement_animation_logger== 0) )
 			{
 				human_animations.SetTrigger("isTalking" );
 			}
@@ -161,11 +161,11 @@ namespace player_scope
 			if(Input.GetKeyDown(KeyCode.T )&& (movement_animation_logger== 0 ) )
 			{
 				human_animations.SetTrigger("isIdle" );
-				itemSpawner.SpawnItem(new Vector3(-21, 45, -93), 1, 1);
+				itemSpawner.SpawnItem(new Vector3(-21, 45, -93), 2, 1);
 			}
 			//Animation Playing block
 			//Based on inputs to see if the animations can play or not 
-			if (movement_animation_logger > 0)  //When the counter is no longer 0 it is valid so walking stops
+			if (movement_animation_logger > 0 && !PauseMenu.isPaused)  //When the counter is no longer 0 it is valid so walking stops
 			{
 				human_animations.SetBool("isMoving", true);
 			}
@@ -174,14 +174,14 @@ namespace player_scope
 			{
 				human_animations.SetBool("isMoving", false);
 			}
-				
+			
 			if (PauseMenu.isPaused)
-			{
+            {
 				return;
-			}
+            }
 
 			//Mouse One THROW CHARGE UP CODE
-			if (Input.GetMouseButtonDown(1))
+				if (Input.GetMouseButtonDown(1))
 			{
 				//Charging Up Throw
 				if (Has_axe == true)
