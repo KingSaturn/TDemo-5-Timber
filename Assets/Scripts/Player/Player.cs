@@ -89,10 +89,6 @@ namespace player_scope
         // Update is called once per frame
         void Update()
 		{
-			if (PauseMenu.isPaused)
-            {
-				return;
-            }
 			if (transform.position.y > 3.0f)
             {
 				Controller.Move(new Vector3(0,-1,0));
@@ -167,9 +163,25 @@ namespace player_scope
 				human_animations.SetTrigger("isIdle" );
 				itemSpawner.SpawnItem(new Vector3(-21, 45, -93), 1, 1);
 			}
-			
-		//Mouse One THROW CHARGE UP CODE
-			if(Input.GetMouseButtonDown(0 ) )
+			//Animation Playing block
+			//Based on inputs to see if the animations can play or not 
+			if (movement_animation_logger > 0)  //When the counter is no longer 0 it is valid so walking stops
+			{
+				human_animations.SetBool("isMoving", true);
+			}
+
+			else
+			{
+				human_animations.SetBool("isMoving", false);
+			}
+				
+			if (PauseMenu.isPaused)
+			{
+				return;
+			}
+
+			//Mouse One THROW CHARGE UP CODE
+			if (Input.GetMouseButtonDown(1))
 			{
 				//Charging Up Throw
 				if (Has_axe == true)
@@ -210,7 +222,7 @@ namespace player_scope
 
 			}
 		//For releasing the axe	ACTUAL THROWING CODE
-			if (Input.GetMouseButtonUp(0 ) )
+			if (Input.GetMouseButtonUp(1 ) )
 			{
 				if(Has_axe== true )
 				{
@@ -239,17 +251,6 @@ namespace player_scope
 					axe_throwing_power= AXE_MIN_POWER;
 					axe_incriment_timer = ZERO;
 				}
-			}
-		//Animation Playing block
-			//Based on inputs to see if the animations can play or not 
-			if(movement_animation_logger> 0 )	//When the counter is no longer 0 it is valid so walking stops
-			{
-				human_animations.SetBool("isMoving" ,true );
-			}
-			
-			else
-			{
-				human_animations.SetBool("isMoving" ,false );
 			}
 		//Movement block
 			float x= Input.GetAxis("Horizontal" );

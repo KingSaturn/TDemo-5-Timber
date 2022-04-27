@@ -153,9 +153,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lumber_Jack
       objectReference: {fileID: 0}
+    - target: {fileID: 7103351574676658088, guid: cad1e144a50a84e4fa9606a963580d77, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7409471631460267412, guid: cad1e144a50a84e4fa9606a963580d77, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7409471632466291272, guid: cad1e144a50a84e4fa9606a963580d77, type: 3}
       propertyPath: m_Pivot.x
@@ -235,6 +239,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7409471633188552090, guid: cad1e144a50a84e4fa9606a963580d77, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7791739936426803847, guid: cad1e144a50a84e4fa9606a963580d77, type: 3}
+      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
