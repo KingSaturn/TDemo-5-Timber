@@ -13,7 +13,7 @@ namespace player_scope
 			private const string player_tag= "Player";
 			private CharacterController Controller;
 			//The stat class that will be used to determine things
-			private PlayerInfo info;
+			public PlayerInfo info;
 			private Vector3 velocity;
 			//Used to access the players hand for equipting the axe
 			public static GameObject player_hand;

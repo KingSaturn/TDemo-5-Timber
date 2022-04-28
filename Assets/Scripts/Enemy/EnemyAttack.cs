@@ -9,7 +9,8 @@ public class EnemyAttack : MonoBehaviour
     private Collider hitbox;
     private bool inRange = false;
 
-    private void Awake()
+
+    private void Start()
     {
         player = GameObject.FindGameObjectsWithTag("Player")[0];
         info = player.GetComponent<CharacterInfo>();

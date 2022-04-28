@@ -24,13 +24,13 @@ public class CharacterInfo : MonoBehaviour
         currentHp = maxHp.GetValue();
     }
 
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
         currentHp -= Mathf.Clamp(damage, 0, int.MaxValue);
         Debug.Log(currentHp);
     }
 
-    public void DeathState()
+    public virtual void DeathState()
     {
         return;
     }
