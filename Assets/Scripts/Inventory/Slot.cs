@@ -11,6 +11,8 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     private InventoryUI invUI;
     private InventoryItem item;
     private int slotIndex;
+
+
     public void Init(InventoryUI parent, int index)
     {
         slotIndex = index;

@@ -10,7 +10,7 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private Transform slotsParent;
     [SerializeField] private Slot slotPrefab;
     public static GameObject player;
-    private Inventory inventory;
+    public Inventory inventory;
     private PlayerInfo info;
     private int curserHover = -1;
     private void Awake()

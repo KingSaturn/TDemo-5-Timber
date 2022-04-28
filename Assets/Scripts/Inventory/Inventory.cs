@@ -20,6 +20,12 @@ namespace Timber.InventorySystem
                 string input = File.ReadAllText(Path.Combine(Application.persistentDataPath, "/SaveData.txt"));
                 SaveData data = JsonUtility.FromJson<SaveData>(input);
                 items = data.items;
+                for (int x = 0; x < items.Count; x += 1)
+                {
+                    items[x].icon = ItemDatabase.GetItemData(items[x].id).icon;
+                    items[x].material = ItemDatabase.GetItemData(items[x].id).material;
+                    items[x].model = ItemDatabase.GetItemData(items[x].id).model;
+                }
                 OnIvnChange?.Invoke();
             }
             else
@@ -32,6 +38,7 @@ namespace Timber.InventorySystem
         private void Start()
         {
             OnIvnChange?.Invoke();
+
         }
 
         private void Update()

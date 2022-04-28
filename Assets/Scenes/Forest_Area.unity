@@ -416,8 +416,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1106748737, guid: c136f54b2b3f6bb4b967cd76a6ba7392, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c136f54b2b3f6bb4b967cd76a6ba7392, type: 3}
 --- !u!1001 &1847592185
 PrefabInstance:

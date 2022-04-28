@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Timber.InventorySystem;
 
 namespace player_scope
 {
@@ -90,6 +91,10 @@ namespace player_scope
 			itemSpawner = FindObjectOfType<ItemSpawner>();
         }
 
+        private void Start()
+        {
+
+        }
         // Update is called once per frame
         void Update()
 		{
