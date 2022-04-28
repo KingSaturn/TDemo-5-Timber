@@ -7,6 +7,7 @@ public class EnemyAttack : MonoBehaviour
     private GameObject player;
     private CharacterInfo info;
     private Collider hitbox;
+    private CharacterInfo attackinfo;
     private bool inRange = false;
 
 
@@ -15,6 +16,7 @@ public class EnemyAttack : MonoBehaviour
         player = GameObject.FindGameObjectsWithTag("Player")[0];
         info = player.GetComponent<CharacterInfo>();
         hitbox = this.GetComponent<SphereCollider>();
+        attackinfo = this.GetComponentInParent<CharacterInfo>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -37,7 +39,14 @@ public class EnemyAttack : MonoBehaviour
     {
         if (inRange)
         {
-            info.TakeDamage(damage);
+            if (attackinfo != null)
+            {
+                info.TakeDamage(attackinfo.attack.GetValue());
+            }
+            else
+            {
+                info.TakeDamage(10);
+            }
         }
 
     }

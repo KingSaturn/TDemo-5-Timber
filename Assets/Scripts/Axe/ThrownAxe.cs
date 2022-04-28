@@ -7,10 +7,12 @@ public class ThrownAxe : MonoBehaviour
     private Rigidbody rb;
     public bool inWall = false;
     private bool canDamage = true;
+    private PlayerInfo playerInfo;
 
     private void Awake()
     {
         rb = this.GetComponent<Rigidbody>();
+        playerInfo = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInfo>();
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, 10);
         foreach (Collider col in hitColliders)
         {
@@ -60,8 +62,21 @@ public class ThrownAxe : MonoBehaviour
         if (speed > 10 && canDamage)
         {
             CharacterInfo info = other.GetComponent<CharacterInfo>();
-            info.TakeDamage(10);
-            Debug.Log(other.name + "took 10 Damage!");
+            if (speed > 50)
+            {
+                if (speed > 100)
+                {
+                info.TakeDamage(playerInfo.attack.GetValue() * 4);
+                }
+                else
+                {
+                info.TakeDamage(playerInfo.attack.GetValue() * 2);
+                }
+            }
+            else
+            {
+                info.TakeDamage(playerInfo.attack.GetValue());
+            }
             canDamage = false;
         }
     }

@@ -134,7 +134,7 @@ MonoBehaviour:
   maxHp:
     baseValue: 100
   attack:
-    baseValue: 2
+    baseValue: 10
   speed:
     baseValue: 50
 --- !u!1 &1305870218006791840

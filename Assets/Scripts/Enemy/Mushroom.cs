@@ -53,6 +53,16 @@ public class Mushroom : MonoBehaviour
     // Update is called once per frame
     void Update()
 	{
+		if (info.currentHp <= 0)
+        {
+			Destroy(this.gameObject);
+        }
+
+		if (transform.position.y > 3.0f)
+		{
+			Controller.Move(new Vector3(0, -1, 0));
+		}
+
 		if (PauseMenu.isPaused)
 		{
 			return;
@@ -67,25 +77,6 @@ public class Mushroom : MonoBehaviour
         {
 			movement_animation_logger = 0;
 
-		}
-		
-	//Attacking
-		if(Input.GetKeyDown(KeyCode.E ) )
-		{
-			if(is_neutral== false )
-			{
-				Debug.Log("Attack" );
-				mushroom_animations.SetTrigger("IsAttacking");	//Pass in the parameter from the animator window it will trigger to start
-			}
-			
-			else
-			{
-				Debug.Log("Cannot attack MUST TRANSFORM" );
-			}
-		}
-		
-		else
-		{
 		}
 	//Talking
 		if(Input.GetKeyDown(KeyCode.R )&& (movement_animation_logger== 0 ) )

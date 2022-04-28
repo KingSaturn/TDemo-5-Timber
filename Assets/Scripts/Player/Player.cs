@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace player_scope
 {
@@ -19,6 +20,8 @@ namespace player_scope
 			public static GameObject player_hand;
 			public static GameObject inventory;
 			public static Canvas inventory_canvas;
+			public static PlayerAttack attack;
+			public static float attackTimer;
 	//Animation Block
 		//The player must have an Animator component
 		private Animator human_animations;
@@ -47,7 +50,7 @@ namespace player_scope
 			private const float AXE_MAX_POWER= 10000.0f;	//Max value
 			private const float AXE_INCRIMENT= 2000.0f;	//Stepping value
 			//Timer vairables for the incrument in power, for as long as the button is held the timer will start counting down
-			private float axe_incriment_timer;
+			private float axe_incriment_timer = 0.0f;
 				private const float HALF= 0.5f;
 				private const float ZERO= 0.0f;
 			
@@ -69,6 +72,7 @@ namespace player_scope
 				info = player.GetComponent<PlayerInfo>();
 				player_hand= GameObject.Find("Lumber_Jack/Armature/Hand_L/Hand_L_end");
 				inventory = GameObject.Find("Lumber_Jack/Menus/Inventory");
+				attack = this.GetComponentInChildren<PlayerAttack>();
 			inventory_canvas = inventory.GetComponent<Canvas>();
 		//Camera		
 			mainCam=(GameObject.FindGameObjectsWithTag(mainCam_tag ) )[0 ].GetComponent<Camera>();
@@ -89,6 +93,10 @@ namespace player_scope
         // Update is called once per frame
         void Update()
 		{
+			if (info.currentHp <= 0)
+            {
+				SceneManager.LoadScene(3);
+            }
 			if (transform.position.y > 3.0f)
             {
 				Controller.Move(new Vector3(0,-1,0));
@@ -137,12 +145,19 @@ namespace player_scope
 				movement_animation_logger-= 1;
 			}
 
+			if (attackTimer > 0.0f)
+            {
+				attackTimer -= Time.deltaTime;
+            }
+
 			//E Key ATTACK BUTTON
 			if (Input.GetKeyDown(KeyCode.E) && !PauseMenu.isPaused)
 			{
-				if(Has_axe== true )
+				if(Has_axe== true && attackTimer <= 0.0f)
 				{
-					human_animations.SetTrigger("isAttacking" );	//Pass in the parameter from the animator window it will trigger to start
+					human_animations.SetTrigger("isAttacking" );    //Pass in the parameter from the animator window it will trigger to start
+					attackTimer = 0.5f;
+					StartCoroutine(AttackEnemies());
 				}
 				
 				else
@@ -224,7 +239,7 @@ namespace player_scope
 		//For releasing the axe	ACTUAL THROWING CODE
 			if (Input.GetMouseButtonUp(1 ) )
 			{
-				if(Has_axe== true )
+				if(Has_axe== true)
 				{
 					human_animations.SetTrigger("isAttacking" );
 				//Cleanup
@@ -408,7 +423,12 @@ namespace player_scope
 				AxeParent.Parent_Axe(held_axe_prefab);
             }
 		}
+		
+		private IEnumerator AttackEnemies()
+        {
+			yield return new WaitForSeconds(0.3f);
+			attack.DamageEnemy(info.attack.GetValue());
+        }
 
     }
-	
 }
