@@ -35,7 +35,6 @@ public class PlayerAttack : MonoBehaviour
     public void DamageEnemy(int damage)
     {
         List<GameObject> attacked = new List<GameObject>();
-        Debug.Log("H");
         foreach(GameObject enemy in attackers)
         {
             if(enemy.GetComponent<CharacterInfo>() != null && !attacked.Contains(enemy))

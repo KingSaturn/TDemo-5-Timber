@@ -38,7 +38,6 @@ public class PlayerInfo : CharacterInfo
     {
         currentHp -= Mathf.Clamp(damage, 0, int.MaxValue);
         healthBar.UpdateHealth();
-        Debug.Log(currentHp);
     }
 
 }
