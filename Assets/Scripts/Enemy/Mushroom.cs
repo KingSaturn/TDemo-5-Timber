@@ -10,8 +10,7 @@ public class Mushroom : MonoBehaviour
 	public static GameObject player;
 	private CharacterInfo info;
 	private const string mushroom_tag = "Mushroom";
-	private CharacterController Controller;
-	private Vector3 velocity;
+	private CharacterController controller;
 	public float lookRadius;
 	private float lookSpeed = 2.0f;
 	public float attackRadius;
@@ -33,7 +32,7 @@ public class Mushroom : MonoBehaviour
     {
 		//PLayer    -Automatically aqquires objects no need to pass them in via public 
 		info = this.GetComponent<CharacterInfo>();
-		Controller = this.GetComponent<CharacterController>();
+		controller = this.GetComponent<CharacterController>();
 		rangeCollider = this.GetComponent<SphereCollider>();
 		mushroom_animations = this.GetComponent<Animator>();
 		attack = this.GetComponentInChildren<EnemyAttack>();
@@ -60,7 +59,7 @@ public class Mushroom : MonoBehaviour
 
 		if (transform.position.y > 3.0f)
 		{
-			Controller.Move(new Vector3(0, -1, 0));
+			controller.Move(transform.up * -1);
 		}
 
 		if (PauseMenu.isPaused)
@@ -141,7 +140,7 @@ public class Mushroom : MonoBehaviour
 				FaceTarget();
 				if (attackTimer <= 0)
                 {
-					Controller.Move(transform.forward * info.speed.GetValue() * Time.deltaTime);
+					controller.Move(transform.forward * info.speed.GetValue() * Time.deltaTime);
 				}
 				if (attackTimer > 0)
 				{

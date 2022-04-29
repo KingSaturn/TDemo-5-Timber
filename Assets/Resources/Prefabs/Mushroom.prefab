@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 549998496812862831}
   - component: {fileID: 12180138476890753}
   - component: {fileID: 12180138476890752}
-  - component: {fileID: 2056886264}
+  - component: {fileID: 8818183277957427524}
   - component: {fileID: 2056886265}
   - component: {fileID: 12180138476890754}
   - component: {fileID: 582694289054391656}
@@ -51,10 +51,10 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 2
-  m_Radius: 0.5
+  m_Radius: 2
   m_SlopeLimit: 45
   m_StepOffset: 0.3
-  m_SkinWidth: 0.08
+  m_SkinWidth: 0.5
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &12180138476890752
@@ -76,8 +76,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!136 &2056886264
-CapsuleCollider:
+--- !u!65 &8818183277957427524
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -86,10 +86,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 6.4
-  m_Height: 44.2
-  m_Direction: 1
-  m_Center: {x: 0, y: 19.15, z: 0}
+  serializedVersion: 2
+  m_Size: {x: 12, y: 35.6, z: 12}
+  m_Center: {x: 0, y: 18.5, z: 0}
 --- !u!65 &2056886265
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -515,7 +514,7 @@ GameObject:
   - component: {fileID: 3581968533201250866}
   m_Layer: 0
   m_Name: Mushroom_Body
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

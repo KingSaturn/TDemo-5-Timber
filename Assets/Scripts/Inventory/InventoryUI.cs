@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Timber.InventorySystem;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private Slot slotPrefab;
     public static GameObject player;
     public Inventory inventory;
+    private int swappedItem;
+    private bool isSwapping;
     private PlayerInfo info;
     private int curserHover = -1;
     private void Awake()
@@ -18,9 +21,30 @@ public class InventoryUI : MonoBehaviour
         player = (GameObject.FindGameObjectsWithTag("Player"))[0];
         info = player.GetComponent<PlayerInfo>();
         inventory = player.GetComponent<Inventory>();
+        isSwapping = false;
 
         inventory.OnIvnChange += OnInvChange;
         GenerateEmptySlots();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            if (GetCurserHover() < inventory.items.Count && GetCurserHover() >= 0)
+            {
+                swappedItem = GetCurserHover();
+            }
+        }
+        if (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            if (GetCurserHover() < inventory.items.Count && GetCurserHover() >= 0)
+            {
+                inventory.SwapItems(GetCurserHover(), swappedItem);
+            }
+            swappedItem = -1;
+        }
+
     }
 
     public int GetCurserHover()
