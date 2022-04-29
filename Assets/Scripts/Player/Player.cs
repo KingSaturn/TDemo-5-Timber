@@ -279,7 +279,7 @@ namespace player_scope
 			Vector3 move= transform.right* x+ transform.forward* z;
 
 			// Account for diagonal movement
-			if (x != 0 && z != 0)
+			if (x != 0 && z != 0 || z == -1)
             {
 				move = new Vector3(move.x * 0.5f, move.y, move.z * 0.5f);
             }
