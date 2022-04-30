@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemSpawner : MonoBehaviour
 {
-    public void SpawnItem(Vector3 location, int id, int amount)
+    public static void SpawnItem(Vector3 location, int id, int amount)
     {
         GameObject item = Resources.Load("Prefabs/Item") as GameObject;
         GameObject spawnedItem = Instantiate(item, location, Quaternion.Euler(0, 0, 0));

@@ -153,6 +153,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lumber_Jack
       objectReference: {fileID: 0}
+    - target: {fileID: 1657331847835102314, guid: cad1e144a50a84e4fa9606a963580d77, type: 3}
+      propertyPath: m_Radius
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3184195197022347078, guid: cad1e144a50a84e4fa9606a963580d77, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 28.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7409471632466291272, guid: cad1e144a50a84e4fa9606a963580d77, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0

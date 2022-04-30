@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 549998496812862831}
   - component: {fileID: 12180138476890753}
   - component: {fileID: 12180138476890752}
-  - component: {fileID: 8818183277957427524}
+  - component: {fileID: 2198556938985808259}
   - component: {fileID: 2056886265}
   - component: {fileID: 12180138476890754}
   - component: {fileID: 582694289054391656}
@@ -50,11 +50,11 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: 2
+  m_Height: 0
+  m_Radius: 0.1
   m_SlopeLimit: 45
   m_StepOffset: 0.3
-  m_SkinWidth: 0.5
+  m_SkinWidth: 0.02
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &12180138476890752
@@ -76,8 +76,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!65 &8818183277957427524
-BoxCollider:
+--- !u!136 &2198556938985808259
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -86,8 +86,9 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 12, y: 35.6, z: 12}
+  m_Radius: 8.02
+  m_Height: 37
+  m_Direction: 1
   m_Center: {x: 0, y: 18.5, z: 0}
 --- !u!65 &2056886265
 BoxCollider:
@@ -343,7 +344,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6387517220712250240}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 0.5, y: 12.650002, z: 21.699997}
+  m_LocalPosition: {x: 0.5, y: 12.650002, z: 32.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 549998496812862831}
@@ -360,7 +361,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 16.59
+  m_Radius: 30
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4969153685300581375
 MonoBehaviour:

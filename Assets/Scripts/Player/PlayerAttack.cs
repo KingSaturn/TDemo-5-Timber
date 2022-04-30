@@ -21,6 +21,7 @@ public class PlayerAttack : MonoBehaviour
         {
             GameObject x = other.gameObject as GameObject;
             attackers.Add(x);
+            Debug.Log("Yeah");
         }
     }
 
@@ -35,14 +36,24 @@ public class PlayerAttack : MonoBehaviour
     public void DamageEnemy(int damage)
     {
         List<GameObject> attacked = new List<GameObject>();
+        List<GameObject> killed = new List<GameObject>();
         foreach(GameObject enemy in attackers)
         {
+            if (enemy == null)
+            {
+                killed.Add(enemy);
+                continue;
+            }    
             if(enemy.GetComponent<CharacterInfo>() != null && !attacked.Contains(enemy))
             {
                 attacked.Add(enemy);
                 CharacterInfo info = enemy.GetComponent<CharacterInfo>();
                 info.TakeDamage(attackInfo.attack.GetValue());
             }
+        }
+        foreach(GameObject enemy in killed)
+        {
+            attackers.Remove(enemy);
         }
     }
 }

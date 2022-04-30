@@ -87,8 +87,6 @@ namespace player_scope
 				axe_incriment_timer= ZERO;
 			transform.rotation = Quaternion.Euler(0, 0, 0);
 				axe_pickup_timer = HALF;
-
-			itemSpawner = FindObjectOfType<ItemSpawner>();
         }
 
         private void Start()
@@ -181,7 +179,7 @@ namespace player_scope
 			if(Input.GetKeyDown(KeyCode.T )&& (movement_animation_logger== 0 ) )
 			{
 				human_animations.SetTrigger("isIdle" );
-				itemSpawner.SpawnItem(new Vector3(-21, 45, -93), 2, 1);
+				ItemSpawner.SpawnItem(new Vector3(-21, 45, -93), 2, 1);
 			}
 			//Animation Playing block
 			//Based on inputs to see if the animations can play or not 
