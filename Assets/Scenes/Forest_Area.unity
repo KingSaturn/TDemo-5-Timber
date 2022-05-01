@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: dfbf518799ab3df43b8b0f9756c26961, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dfbf518799ab3df43b8b0f9756c26961, type: 3}
       propertyPath: m_LocalPosition.x
@@ -749,6 +749,10 @@ PrefabInstance:
     - target: {fileID: 1808113771054127456, guid: 383861af2c5e12c42a9f3cfad80b5a5d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3830000169582372707, guid: 383861af2c5e12c42a9f3cfad80b5a5d, type: 3}
+      propertyPath: enemies.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5884481327469984874, guid: 383861af2c5e12c42a9f3cfad80b5a5d, type: 3}
       propertyPath: m_Name
