@@ -153,6 +153,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lumber_Jack
       objectReference: {fileID: 0}
+    - target: {fileID: 1172297446613691175, guid: cad1e144a50a84e4fa9606a963580d77, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4ba1877f5ec59da40b54141ced701a89, type: 2}
     - target: {fileID: 1657331847835102314, guid: cad1e144a50a84e4fa9606a963580d77, type: 3}
       propertyPath: m_Radius
       value: 0.3
