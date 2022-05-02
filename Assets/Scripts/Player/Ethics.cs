@@ -5,6 +5,7 @@ using UnityEngine;
 public class Ethics : MonoBehaviour
 {
     public GameObject sprite;
+    RectTransform rectTransform;
 
     // Will be used to define the amount of rotation on the arrow and possibly more.
     private float ethicAmount = 0f;
@@ -16,30 +17,51 @@ public class Ethics : MonoBehaviour
     // Store current amount just in case to keep it in between loads?
     // private Quaternion currentQuaternion, oldQuaternion;
 
-    // Start is called before the first frame update
     void Start()
     {
-        // oldQuaternion = sprite.GetComponent<RectTransform>().rotation;
+        rectTransform = sprite.GetComponent<RectTransform>();
     }
 
     // Trying to change the Z on rotation 
     public void ethicsDown()
     {
-        if(ethicAmount < maxEthic)
-        {
-            return;
-        };
-        ethicAmount -= 0.5f;
-        sprite.GetComponent<RectTransform>().rotation = Quaternion.Euler(0.0f, 0.0f, ethicAmount);
+        //if(ethicAmount > minEthic)
+        //{
+        //    return;
+        //};
+        //ethicAmount -= 10f;
+        //Debug.Log(ethicAmount);
+        //sprite.transform.Rotate(new Vector3(0, 0, -0.5f));
+        ethicAmount -= 10f;
+        updateRotation();
+        Debug.Log(ethicAmount);
     }
 
     public void ethicsUp()
     {
-        if (ethicAmount > minEthic)
+        //if (ethicAmount < maxEthic)
+        //{
+        //    return;
+        //};
+        //ethicAmount += 10f;
+        //sprite.transform.Rotate(new Vector3(0, 0, 0.5f));
+
+        ethicAmount += 10f;
+        updateRotation();
+    }
+
+    private void updateRotation()
+    {
+        float zRotation = Mathf.Lerp(-74, 74, (ethicAmount / maxEthic)) + 74;
+        zRotation = -(Mathf.Clamp(zRotation, maxEthic, minEthic));
+        rectTransform.rotation = Quaternion.Euler(0, 0, zRotation);
+        if(zRotation == minEthic)
         {
-            return;
-        };
-        ethicAmount += 0.5f;
-        sprite.GetComponent<RectTransform>().rotation = Quaternion.Euler(0.0f, 0.0f, ethicAmount);
+            ethicAmount -= 10f;
+        } else if (zRotation == maxEthic)
+        {
+            ethicAmount += 10f;
+        }
+        Debug.Log(zRotation);
     }
 }
