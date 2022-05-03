@@ -122,6 +122,10 @@ namespace Timber.InventorySystem
         /// </summary>
         public bool RemoveItem(int itemID, int itemAmount)
         {
+            if(itemAmount <=0)
+            {
+                return true;
+            }
             for (int i = 0; i < itemAmount; i++)
             {
                 if (RemoveSingleItem(itemID) == false)
@@ -160,6 +164,18 @@ namespace Timber.InventorySystem
         private bool RemoveSingleItem(int itemID)
         {
             return RemoveSingleItem(itemID, -1);
+        }
+        public int GetItemCount(int itemID)
+        {
+            int itemCount = 0;
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (itemID == items[i].id)
+                {
+                    itemCount =+ items[i].currentStack;
+                }
+            }
+            return itemCount;
         }
         /// <summary>
         /// returns the index of the first item matched, returns -1 if not found

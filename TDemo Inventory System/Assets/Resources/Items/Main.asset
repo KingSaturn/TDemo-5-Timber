@@ -17,15 +17,19 @@ MonoBehaviour:
     name: Oak Log
     icon: {fileID: 21300000, guid: b1507baf58bd2b6418f0c187af5c6b65, type: 3}
     maxStack: 10
+    itemValue: 1
   - id: 2
     name: Dead Log
     icon: {fileID: 21300000, guid: f3dc081df0880c54d90313c52e7aed07, type: 3}
     maxStack: 10
+    itemValue: 0.5
   - id: 3
     name: Axe
     icon: {fileID: 21300000, guid: ef231e22ebc8cd24faf50920cdae39f1, type: 3}
     maxStack: 1
+    itemValue: -1
   - id: 4
-    name: Dildo
-    icon: {fileID: 21300000, guid: baca41270f49e2247ac4e0e8e524acb8, type: 3}
+    name: item
+    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     maxStack: 3
+    itemValue: -1

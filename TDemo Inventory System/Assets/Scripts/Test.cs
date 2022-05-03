@@ -11,14 +11,13 @@ public class Test : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
-            int rnd = Random.Range(1, 5);
-            while(rnd == 3 && inv.GetFirstItemIndex(3) != -1)
-            {
-                rnd = Random.Range(1, 5);
-            }
-            inv.AddItem(rnd, 1);
+            inv.AddItem(1, 1);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if(Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            inv.AddItem(2, 1);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             inv.RemoveItemAt(invUI.GetCurserHover(), 1);
         }

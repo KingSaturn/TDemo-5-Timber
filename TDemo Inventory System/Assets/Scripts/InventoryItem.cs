@@ -13,6 +13,7 @@ namespace Timber.InventorySystem
             icon = data.icon;
             maxStack = data.maxStack;
             name = data.name;
+            itemValue = data.itemValue;
         }
         public InventoryItem(InventoryItem data)
         {
@@ -25,6 +26,7 @@ namespace Timber.InventorySystem
             maxStack = data.maxStack;
             name = data.name;
             currentStack = data.currentStack;
+            itemValue = data.itemValue;
         }
     }
 }

@@ -8,6 +8,7 @@ namespace Timber.InventorySystem
         public string name;
         public Sprite icon;
         public int maxStack;
+        public float itemValue;
 
         public ItemData()
         {
@@ -15,6 +16,7 @@ namespace Timber.InventorySystem
             name = "n/a";
             icon = null;
             maxStack = 0;
+            itemValue = -1;
         }
     }
 }
