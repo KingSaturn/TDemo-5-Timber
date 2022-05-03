@@ -55,6 +55,7 @@ public class Mushroom : MonoBehaviour
 		if (info.currentHp <= 0)
         {
 			Destroy(this.gameObject);
+			player.GetComponent<Ethics>().ethicsDown();
         }
 
 		if (transform.position.y > 3.0f)

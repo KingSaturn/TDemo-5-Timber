@@ -1070,6 +1070,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -44.42102
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c672cc458c71454ebd8456d53d8615d, type: 2}
     - target: {fileID: 919132149155446097, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
       propertyPath: m_Name
       value: Spirit (2)
@@ -3505,6 +3509,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -87.20801
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c672cc458c71454ebd8456d53d8615d, type: 2}
     - target: {fileID: 919132149155446097, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
       propertyPath: m_Name
       value: Spirit (10)
@@ -3567,6 +3575,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -87.20801
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c672cc458c71454ebd8456d53d8615d, type: 2}
     - target: {fileID: 919132149155446097, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
       propertyPath: m_Name
       value: Spirit (7)
@@ -4154,7 +4166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 380880537}
   m_Layer: 0
-  m_Name: bushes
+  m_Name: Bushes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5531,6 +5543,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -44.42102
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c672cc458c71454ebd8456d53d8615d, type: 2}
     - target: {fileID: 919132149155446097, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
       propertyPath: m_Name
       value: Spirit (23)
@@ -6163,6 +6179,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -44.42102
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c672cc458c71454ebd8456d53d8615d, type: 2}
     - target: {fileID: 919132149155446097, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
       propertyPath: m_Name
       value: Spirit (29)
@@ -6551,6 +6571,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -44.42102
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c672cc458c71454ebd8456d53d8615d, type: 2}
     - target: {fileID: 919132149155446097, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
       propertyPath: m_Name
       value: Spirit (30)
@@ -6869,6 +6893,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -87.20801
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c672cc458c71454ebd8456d53d8615d, type: 2}
     - target: {fileID: 919132149155446097, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
       propertyPath: m_Name
       value: Spirit (6)
@@ -7121,6 +7149,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -109.494995
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c672cc458c71454ebd8456d53d8615d, type: 2}
     - target: {fileID: 919132149155446097, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
       propertyPath: m_Name
       value: Spirit (28)
@@ -8071,6 +8103,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -119.103
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c672cc458c71454ebd8456d53d8615d, type: 2}
     - target: {fileID: 919132149155446097, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
       propertyPath: m_Name
       value: Spirit (13)
@@ -8640,6 +8676,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -119.103
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c672cc458c71454ebd8456d53d8615d, type: 2}
     - target: {fileID: 919132149155446097, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
       propertyPath: m_Name
       value: Spirit (16)
@@ -8702,6 +8742,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -44.42102
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c672cc458c71454ebd8456d53d8615d, type: 2}
     - target: {fileID: 919132149155446097, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
       propertyPath: m_Name
       value: Spirit (12)
@@ -9730,6 +9774,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -109.494995
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c672cc458c71454ebd8456d53d8615d, type: 2}
     - target: {fileID: 919132149155446097, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
       propertyPath: m_Name
       value: Spirit (25)
@@ -10303,6 +10351,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -44.42102
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c672cc458c71454ebd8456d53d8615d, type: 2}
     - target: {fileID: 919132149155446097, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
       propertyPath: m_Name
       value: Spirit (4)
@@ -11199,6 +11251,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -87.20801
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c672cc458c71454ebd8456d53d8615d, type: 2}
     - target: {fileID: 919132149155446097, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
       propertyPath: m_Name
       value: Spirit (22)
@@ -11851,6 +11907,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -44.42102
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c672cc458c71454ebd8456d53d8615d, type: 2}
     - target: {fileID: 919132149155446097, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
       propertyPath: m_Name
       value: Spirit (17)
@@ -12231,6 +12291,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -87.20801
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c672cc458c71454ebd8456d53d8615d, type: 2}
     - target: {fileID: 919132149155446097, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
       propertyPath: m_Name
       value: Spirit (11)
@@ -12999,6 +13063,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -109.494995
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c672cc458c71454ebd8456d53d8615d, type: 2}
     - target: {fileID: 919132149155446097, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
       propertyPath: m_Name
       value: Spirit (24)
@@ -14065,6 +14133,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -44.42102
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c672cc458c71454ebd8456d53d8615d, type: 2}
     - target: {fileID: 919132149155446097, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
       propertyPath: m_Name
       value: Spirit (20)
@@ -14391,6 +14463,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -44.42102
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c672cc458c71454ebd8456d53d8615d, type: 2}
     - target: {fileID: 919132149155446097, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
       propertyPath: m_Name
       value: Spirit (8)
@@ -14453,6 +14529,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -44.42102
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c672cc458c71454ebd8456d53d8615d, type: 2}
     - target: {fileID: 919132149155446097, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
       propertyPath: m_Name
       value: Spirit (1)
@@ -14647,6 +14727,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -109.494995
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c672cc458c71454ebd8456d53d8615d, type: 2}
     - target: {fileID: 919132149155446097, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
       propertyPath: m_Name
       value: Spirit (26)
@@ -15606,7 +15690,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1422349593}
   m_Layer: 0
-  m_Name: spirits
+  m_Name: Spirits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16087,6 +16171,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -44.42102
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c672cc458c71454ebd8456d53d8615d, type: 2}
     - target: {fileID: 919132149155446097, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
       propertyPath: m_Name
       value: Spirit (19)
@@ -16343,6 +16431,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -44.42102
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c672cc458c71454ebd8456d53d8615d, type: 2}
     - target: {fileID: 919132149155446097, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
       propertyPath: m_Name
       value: Spirit (9)
@@ -16537,6 +16629,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -44.42102
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c672cc458c71454ebd8456d53d8615d, type: 2}
     - target: {fileID: 919132149155446097, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
       propertyPath: m_Name
       value: Spirit (3)
@@ -18409,6 +18505,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -87.20801
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c672cc458c71454ebd8456d53d8615d, type: 2}
     - target: {fileID: 919132149155446097, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
       propertyPath: m_Name
       value: Spirit (21)
@@ -19187,7 +19287,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 165b1ba27a3d0cb43ad6a52056fae41f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 95b94c3d1877d68489b0543ad372d017, type: 2}
+      objectReference: {fileID: 2100000, guid: e756ccbee12c08a4cb0952b8bc38240c, type: 2}
     - target: {fileID: 919132149155446097, guid: 165b1ba27a3d0cb43ad6a52056fae41f, type: 3}
       propertyPath: m_Name
       value: DeadWoodsTerrain
@@ -20422,6 +20522,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -119.103
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c672cc458c71454ebd8456d53d8615d, type: 2}
     - target: {fileID: 919132149155446097, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
       propertyPath: m_Name
       value: Spirit (14)
@@ -21343,7 +21447,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1900780891}
   m_Layer: 0
-  m_Name: trees
+  m_Name: Trees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23204,6 +23308,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -119.103
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c672cc458c71454ebd8456d53d8615d, type: 2}
     - target: {fileID: 919132149155446097, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
       propertyPath: m_Name
       value: Spirit (15)
@@ -23964,6 +24072,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -109.494995
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c672cc458c71454ebd8456d53d8615d, type: 2}
     - target: {fileID: 919132149155446097, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
       propertyPath: m_Name
       value: Spirit (18)
@@ -24220,6 +24332,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -109.494995
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c672cc458c71454ebd8456d53d8615d, type: 2}
     - target: {fileID: 919132149155446097, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
       propertyPath: m_Name
       value: Spirit (27)
@@ -24282,6 +24398,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -87.20801
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c672cc458c71454ebd8456d53d8615d, type: 2}
     - target: {fileID: 919132149155446097, guid: 0c5674e347939214b9367e192ff29a98, type: 3}
       propertyPath: m_Name
       value: Spirit (5)

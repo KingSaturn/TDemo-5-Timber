@@ -100,7 +100,7 @@ namespace player_scope
             {
 				SceneManager.LoadScene(3);
             }
-			if (transform.position.y > 0.3f)
+			if (transform.position.y > 3.0f)
             {
 				Controller.Move(new Vector3(0,-1,0));
             }
