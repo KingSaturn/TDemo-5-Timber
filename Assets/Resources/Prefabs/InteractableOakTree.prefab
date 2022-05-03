@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 7129350142594907567}
   - component: {fileID: 6151725483079823882}
   - component: {fileID: 8267385099895441088}
-  - component: {fileID: 7312213379576495881}
-  - component: {fileID: 8637364075079922908}
-  - component: {fileID: 197028388387351217}
+  - component: {fileID: 1190357571684439884}
+  - component: {fileID: 43219720151107507}
+  - component: {fileID: 6180864776264497748}
   m_Layer: 0
   m_Name: InteractableOakTree
-  m_TagString: Mushroom
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7312213379576495881
+--- !u!65 &1190357571684439884
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,25 +95,27 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 25, y: 78.3022, z: 25}
+  m_Size: {x: 30, y: 78.3022, z: 30}
   m_Center: {x: 0.001750946, y: 39.317894, z: 2.3330822}
---- !u!54 &8637364075079922908
-Rigidbody:
+--- !u!143 &43219720151107507
+CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7618782709322589973}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Mass: 0.0000001
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
---- !u!114 &197028388387351217
+  m_Height: 127.1
+  m_Radius: 21.27
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 32.9, z: 0}
+--- !u!114 &6180864776264497748
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -149,6 +149,14 @@ PrefabInstance:
       propertyPath: attack.baseValue
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 496918998404528850, guid: cad1e144a50a84e4fa9606a963580d77, type: 3}
+      propertyPath: m_SlopeLimit
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 496918998404528850, guid: cad1e144a50a84e4fa9606a963580d77, type: 3}
+      propertyPath: m_StepOffset
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 730710017828342564, guid: cad1e144a50a84e4fa9606a963580d77, type: 3}
       propertyPath: m_Name
       value: Lumber_Jack
@@ -195,7 +203,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7409471633188552090, guid: cad1e144a50a84e4fa9606a963580d77, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1089
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7409471633188552090, guid: cad1e144a50a84e4fa9606a963580d77, type: 3}
       propertyPath: m_SizeDelta.y
@@ -203,16 +211,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7409471633188552090, guid: cad1e144a50a84e4fa9606a963580d77, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 544.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7409471633188552090, guid: cad1e144a50a84e4fa9606a963580d77, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 496918998404528855, guid: cad1e144a50a84e4fa9606a963580d77, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cad1e144a50a84e4fa9606a963580d77, type: 3}
+--- !u!1 &8272223726141416862 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 730710017828342564, guid: cad1e144a50a84e4fa9606a963580d77, type: 3}
+  m_PrefabInstance: {fileID: 8712450172066328250}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8756975740001976100 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 103530355730551198, guid: cad1e144a50a84e4fa9606a963580d77, type: 3}
   m_PrefabInstance: {fileID: 8712450172066328250}
   m_PrefabAsset: {fileID: 0}
+--- !u!136 &2295989743381305731
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8272223726141416862}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 10.7
+  m_Height: 49.29
+  m_Direction: 1
+  m_Center: {x: 0, y: 22.82, z: 0}
