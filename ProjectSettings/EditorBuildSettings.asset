@@ -9,11 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/NEW_Forest_Area.unity
     guid: 3f24b76b212c54946bb00b18ca85722f
   - enabled: 1
-    path: Assets/Scenes/DeadWoods_Area.unity
-    guid: ffe6b415fde3b35429fdb9efdd30cf6b
+    path: Assets/Scenes/NEW_DeadWoods_Area.unity
+    guid: b9615446666ae634780306ed17c69791
   - enabled: 1
-    path: Assets/Scenes/Town_Area.unity
-    guid: bf5c9cdc7c2917241960db0a99c6d519
+    path: Assets/Scenes/NEW_Town_Area.unity
+    guid: 0fd20a0ce3d03d94dbf03532e03e2c38
   - enabled: 1
     path: Assets/Scenes/TitleScreen.unity
     guid: a3713d19448cf054c846994d25851dd1
