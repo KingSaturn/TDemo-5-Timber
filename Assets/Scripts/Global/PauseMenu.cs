@@ -48,7 +48,7 @@ public class PauseMenu : MonoBehaviour
         else
         {
             SaveSerial.SaveGame(0, 0);
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(0);
             Time.timeScale = 1;
             isPaused = false;
         }
