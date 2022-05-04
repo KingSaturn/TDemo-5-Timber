@@ -24,6 +24,7 @@ namespace player_scope
 			public static Canvas inventory_canvas;
 			public static PlayerAttack attack;
 			public static float attackTimer;
+			private AudioSource walkSound;
 			public bool deadEntGone = false;
 			public bool oakEntGone = false;
 	//Animation Block
@@ -74,6 +75,7 @@ namespace player_scope
 				Controller=player.GetComponent<CharacterController>();
 				human_animations=player.GetComponent<Animator>();
 				info = player.GetComponent<PlayerInfo>();
+				walkSound = this.GetComponent<AudioSource>();
 				if (File.Exists(Path.Combine(Application.persistentDataPath, "/SaveData.txt")))
 				{
 					string input = File.ReadAllText(Path.Combine(Application.persistentDataPath, "/SaveData.txt"));
@@ -199,11 +201,23 @@ namespace player_scope
 			//Based on inputs to see if the animations can play or not 
 			if (movement_animation_logger > 0 && !PauseMenu.isPaused)  //When the counter is no longer 0 it is valid so walking stops
 			{
+				if (walkSound.isPlaying)
+                {
+					walkSound.Pause();
+                }
+                else
+                {
+					walkSound.Play();
+                }
 				human_animations.SetBool("isMoving", true);
 			}
 
 			else
 			{
+				if (walkSound.isPlaying)
+				{
+					walkSound.Pause();
+				}
 				human_animations.SetBool("isMoving", false);
 			}
 			

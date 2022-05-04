@@ -41,13 +41,12 @@ public class PauseMenu : MonoBehaviour
             string input = File.ReadAllText(Path.Combine(Application.persistentDataPath, "/SaveData.txt"));
             SaveData data = JsonUtility.FromJson<SaveData>(input);
             SaveSerial.SaveGame(data.scene, data.loadId);
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(0);
             Time.timeScale = 1;
             isPaused = false;
         }
         else
         {
-            SaveSerial.SaveGame(0, 0);
             SceneManager.LoadScene(0);
             Time.timeScale = 1;
             isPaused = false;
