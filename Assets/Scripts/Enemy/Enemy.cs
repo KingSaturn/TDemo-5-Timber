@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour
         this.GetComponent<Collider>().enabled = false;
 
         // Not working for the moment
-        Ethic.GetComponent<Ethics>().ethicsDown();
+        Ethic.GetComponent<Ethics>().ethicsDown(10.0f);
 
         // Future
         //timer += Time.deltaTime;

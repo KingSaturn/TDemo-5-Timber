@@ -8,6 +8,7 @@ public class NPC_Interact : MonoBehaviour
     public string[] text;
     private int textPosition = 0;
     public bool hasAccept;
+    private ShopController shop;
     private Canvas canvas;
     private Button acceptButton;
     private Text speakText;
@@ -16,6 +17,7 @@ public class NPC_Interact : MonoBehaviour
     {
         canvas = GetComponentInChildren<Canvas>();
         acceptButton = canvas.GetComponentsInChildren<Button>()[1];
+        shop = GetComponentInChildren<ShopController>();
         speakText = this.GetComponentsInChildren<Text>()[0];
         canvas.enabled = false;
         acceptButton.enabled = false;
@@ -52,7 +54,10 @@ public class NPC_Interact : MonoBehaviour
 
     public void AcceptButton()
     {
-        // Accept something
+        if (shop != null)
+        {
+            shop.GetComponentsInChildren<Canvas>()[0].enabled = true;
+        }
         StopInteract();
     }
 

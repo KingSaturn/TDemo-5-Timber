@@ -16,7 +16,7 @@ public class PlayerInfo : CharacterInfo
     public Stat inventorySize;
 
     [Tooltip("Determines how ethical the player is towards the forest. Specific to 'PlayerInfo' script.")]
-    public Stat ethics;
+    public float ethics;
 
     private void Awake()
     {

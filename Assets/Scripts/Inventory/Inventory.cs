@@ -149,6 +149,18 @@ namespace Timber.InventorySystem
             }
             return stacks <= 0;
         }
+        public int GetItemCount(int itemID)
+        {
+            int itemCount = 0;
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (itemID == items[i].id)
+                {
+                    itemCount = +items[i].currentStack;
+                }
+            }
+            return itemCount;
+        }
         private bool IsEmptySlot(int index)
         {
             return items[index].id == -1;

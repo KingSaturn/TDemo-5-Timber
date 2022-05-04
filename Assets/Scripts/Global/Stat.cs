@@ -15,16 +15,16 @@ public class Stat
         return baseValue;
     }
 
+    public void SetValue(int x)
+    {
+        baseValue = x;
+    }
+
     public int CalculateValue()
     {
         int finalValue = baseValue;
         modifiers.ForEach(x => finalValue += x);
         return finalValue;
-    }
-    
-    public void AddModifier(int modifier)
-    {
-        modifiers.Add(modifier);
     }
 
     public void RemoveModifier(int modifier)

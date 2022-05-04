@@ -565,6 +565,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4085288557985081573}
   - component: {fileID: 4556346709295648520}
+  - component: {fileID: 7770658479478388632}
   m_Layer: 0
   m_Name: Peasent
   m_TagString: Untagged
@@ -579,7 +580,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3745320200302195295}
-  m_LocalRotation: {x: -0, y: -0.43827683, z: -0, w: -0.89884007}
+  m_LocalRotation: {x: -0, y: -0.438277, z: 0, w: -0.89884}
   m_LocalPosition: {x: 300, y: 0.2240448, z: 671}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -602,6 +603,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactDistance: 54.69
+--- !u!136 &7770658479478388632
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3745320200302195295}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 8.65
+  m_Height: 60.79
+  m_Direction: 1
+  m_Center: {x: 0, y: 17.61, z: 0}
 --- !u!1 &3749519899823848371
 GameObject:
   m_ObjectHideFlags: 0

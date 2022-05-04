@@ -1,4 +1,5 @@
 using System.Collections;
+using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -26,7 +27,7 @@ namespace player_scope
 	//Animation Block
 		//The player must have an Animator component
 		private Animator human_animations;
-			private int movement_animation_logger;	//Used to keep track if the player is moving or not
+			private int movement_animation_logger;  //Used to keep track if the player is moving or not
 	//Camera
 		//Must be in the game and tagged as the "MainCamera"
 		private Camera mainCam;
@@ -71,7 +72,17 @@ namespace player_scope
 				Controller=player.GetComponent<CharacterController>();
 				human_animations=player.GetComponent<Animator>();
 				info = player.GetComponent<PlayerInfo>();
-				player_hand= GameObject.Find("Lumber_Jack/Armature/Hand_L/Hand_L_end");
+				if (File.Exists(Path.Combine(Application.persistentDataPath, "/SaveData.txt")))
+				{
+					string input = File.ReadAllText(Path.Combine(Application.persistentDataPath, "/SaveData.txt"));
+					SaveData data = JsonUtility.FromJson<SaveData>(input);
+					info.maxHp.SetValue(data.info[0]);
+					info.attack.SetValue(data.info[1]);
+					info.inventorySize.SetValue(data.info[2]);
+					info.speed.SetValue(data.info[3]);
+					info.ethics = data.ethics;
+				}
+			player_hand = GameObject.Find("Lumber_Jack/Armature/Hand_L/Hand_L_end");
 				inventory = GameObject.Find("Lumber_Jack/Menus/Inventory");
 				attack = this.GetComponentInChildren<PlayerAttack>();
 			inventory_canvas = inventory.GetComponent<Canvas>();
@@ -179,7 +190,6 @@ namespace player_scope
 			if(Input.GetKeyDown(KeyCode.T )&& (movement_animation_logger== 0 ) )
 			{
 				human_animations.SetTrigger("isIdle" );
-				ItemSpawner.SpawnItem(new Vector3(-21, 45, -93), 2, 1);
 			}
 			//Animation Playing block
 			//Based on inputs to see if the animations can play or not 
