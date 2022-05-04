@@ -34148,6 +34148,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4556346711030508196, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: text.Array.data[0]
+      value: We have a shopkeeper, yet he only buys and sells wood.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556346711030508196, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: text.Array.data[1]
+      value: Is he a collecter or something? Why collect wood?
+      objectReference: {fileID: 0}
     - target: {fileID: 4572231828397473703, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -54649,6 +54657,14 @@ PrefabInstance:
     - target: {fileID: 4085288557985081573, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556346711030508196, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: text.Array.data[0]
+      value: People are mixed about the tree situation around here.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556346711030508196, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: text.Array.data[1]
+      value: I'm just here for the drama.
       objectReference: {fileID: 0}
     - target: {fileID: 4572231828397473703, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
       propertyPath: m_AnchorMax.y
