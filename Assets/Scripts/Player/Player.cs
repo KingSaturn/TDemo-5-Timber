@@ -76,9 +76,9 @@ namespace player_scope
 				human_animations=player.GetComponent<Animator>();
 				info = player.GetComponent<PlayerInfo>();
 				walkSound = this.GetComponent<AudioSource>();
-				if (File.Exists(Path.Combine(Application.persistentDataPath, "/SaveData.txt")))
+				if (File.Exists(Path.Combine(Application.dataPath, "/SaveData.txt")))
 				{
-					string input = File.ReadAllText(Path.Combine(Application.persistentDataPath, "/SaveData.txt"));
+					string input = File.ReadAllText(Path.Combine(Application.dataPath, "/SaveData.txt"));
 					SaveData data = JsonUtility.FromJson<SaveData>(input);
 					info.maxHp.SetValue(data.info[0]);
 					info.attack.SetValue(data.info[1]);

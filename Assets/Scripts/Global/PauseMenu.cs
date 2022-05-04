@@ -36,9 +36,9 @@ public class PauseMenu : MonoBehaviour
 
     public void SaveAndQuit()
     {
-        if (File.Exists(Path.Combine(Application.persistentDataPath, "/SaveData.txt")))
+        if (File.Exists(Path.Combine(Application.dataPath, "/SaveData.txt")))
         {
-            string input = File.ReadAllText(Path.Combine(Application.persistentDataPath, "/SaveData.txt"));
+            string input = File.ReadAllText(Path.Combine(Application.dataPath, "/SaveData.txt"));
             SaveData data = JsonUtility.FromJson<SaveData>(input);
             SaveSerial.SaveGame(data.scene, data.loadId);
             SceneManager.LoadScene(0);
