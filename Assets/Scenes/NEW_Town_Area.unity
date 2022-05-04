@@ -40756,7 +40756,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4556346711030508196, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
       propertyPath: text.Array.data[1]
-      value: Heard he was out it the forest one day and was eaten by a gnome.
+      value: Heard he was out in the forest one day and was eaten by a gnome.
       objectReference: {fileID: 0}
     - target: {fileID: 4556346711030508196, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
       propertyPath: text.Array.data[2]
