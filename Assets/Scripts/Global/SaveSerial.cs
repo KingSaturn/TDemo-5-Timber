@@ -30,7 +30,7 @@ public class SaveSerial : MonoBehaviour
 		data.scene = scene;
 		data.loadId = id;
 		string output = JsonUtility.ToJson(data);
-		File.WriteAllText(Path.Combine(Application.dataPath,"/SaveData.txt"), output);
+		File.WriteAllText(Path.Combine(Application.dataPath + "/SaveData.txt"), output);
 	}
 }
 

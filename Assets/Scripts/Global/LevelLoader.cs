@@ -15,9 +15,9 @@ public class LevelLoader : MonoBehaviour
     private void Awake()
     {
         info = this.GetComponent<LevelInfo>();
-        if (File.Exists(Path.Combine(Application.dataPath, "/SaveData.txt")))
+        if (File.Exists(Path.Combine(Application.dataPath + "/SaveData.txt")))
         {
-            string input = File.ReadAllText(Path.Combine(Application.dataPath, "/SaveData.txt"));
+            string input = File.ReadAllText(Path.Combine(Application.dataPath + "/SaveData.txt"));
             SaveData data = JsonUtility.FromJson<SaveData>(input);
             Instantiate(Resources.Load("Prefabs/Player") as GameObject, info.idCoords[data.loadId], Quaternion.Euler(0, 0, 0));
         }

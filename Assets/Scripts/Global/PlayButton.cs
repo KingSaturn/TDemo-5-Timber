@@ -14,9 +14,9 @@ public class PlayButton : MonoBehaviour
     private void Awake()
     {
         buttonText = this.GetComponentInChildren<Text>();
-        if (File.Exists(Path.Combine(Application.dataPath, "/SaveData.txt")))
+        if (File.Exists(Path.Combine(Application.dataPath + "/SaveData.txt")))
         {
-            string input = File.ReadAllText(Path.Combine(Application.dataPath, "/SaveData.txt"));
+            string input = File.ReadAllText(Path.Combine(Application.dataPath + "/SaveData.txt"));
             data = JsonUtility.FromJson<SaveData>(input);
             buttonText.text = "Continue";
         }

@@ -13,10 +13,10 @@ namespace Timber.InventorySystem
         public int maxInventorySize = 20;
         private void Awake()
         {
-            if (File.Exists(Path.Combine(Application.dataPath, "/SaveData.txt")))
+            if (File.Exists(Path.Combine(Application.dataPath + "/SaveData.txt")))
             {
                 Debug.Log("Loaded Items");
-                string input = File.ReadAllText(Path.Combine(Application.dataPath, "/SaveData.txt"));
+                string input = File.ReadAllText(Path.Combine(Application.dataPath + "/SaveData.txt"));
                 SaveData data = JsonUtility.FromJson<SaveData>(input);
                 items = data.items;
                 for (int x = 0; x < items.Count; x += 1)
@@ -44,10 +44,10 @@ namespace Timber.InventorySystem
         {
             if (Input.GetKeyDown(KeyCode.Alpha9))
             {
-                if (File.Exists(Path.Combine(Application.dataPath, "/SaveData.txt")))
+                if (File.Exists(Path.Combine(Application.dataPath + "/SaveData.txt")))
                 {
                     Debug.Log("Save Deleted");
-                    File.Delete(Path.Combine(Application.dataPath, "/SaveData.txt"));
+                    File.Delete(Path.Combine(Application.dataPath + "/SaveData.txt"));
                 }
             }
         }
