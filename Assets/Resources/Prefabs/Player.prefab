@@ -190,6 +190,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 29418190697773397}
     - target: {fileID: 496918998404528849, guid: cad1e144a50a84e4fa9606a963580d77, type: 3}
+      propertyPath: speed.baseValue
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 496918998404528849, guid: cad1e144a50a84e4fa9606a963580d77, type: 3}
       propertyPath: attack.baseValue
       value: 10
       objectReference: {fileID: 0}

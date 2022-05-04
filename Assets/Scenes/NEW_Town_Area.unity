@@ -5211,6 +5211,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2997948548359688796, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c4854801fdfb18040b42d7866ab082d2, type: 2}
     - target: {fileID: 3745320200302195295, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
       propertyPath: m_Name
       value: Peasent
@@ -5258,6 +5262,14 @@ PrefabInstance:
     - target: {fileID: 4085288557985081573, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556346711030508196, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: text.Array.data[0]
+      value: You're new here, yes?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556346711030508196, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: text.Array.data[1]
+      value: Hope you'll be of help, we've been needing some more wood for our fires.
       objectReference: {fileID: 0}
     - target: {fileID: 4572231828397473703, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -24648,6 +24660,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2997948548359688796, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 18a7fc62b66f94145b689e62ccbc863a, type: 2}
     - target: {fileID: 3745320200302195295, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
       propertyPath: m_Name
       value: Peasent
@@ -24695,6 +24711,24 @@ PrefabInstance:
     - target: {fileID: 4085288557985081573, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556346711030508196, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: text.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556346711030508196, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: text.Array.data[0]
+      value: The old lumberjack said that the forest gave him strength.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556346711030508196, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: text.Array.data[1]
+      value: What? Carrying those logs made him stronger? He looked like a pile of
+        sticks.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556346711030508196, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: text.Array.data[2]
+      value: Doesn't matter now. No point lingerering on the words of the man who
+        would die alone in the forest.
       objectReference: {fileID: 0}
     - target: {fileID: 4572231828397473703, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -34062,6 +34096,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2997948548359688796, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 18a7fc62b66f94145b689e62ccbc863a, type: 2}
     - target: {fileID: 3745320200302195295, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
       propertyPath: m_Name
       value: Peasent
@@ -34861,6 +34899,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2997948548359688796, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c4854801fdfb18040b42d7866ab082d2, type: 2}
     - target: {fileID: 3745320200302195295, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
       propertyPath: m_Name
       value: Peasent
@@ -34908,6 +34950,14 @@ PrefabInstance:
     - target: {fileID: 4085288557985081573, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556346711030508196, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: text.Array.data[0]
+      value: Look at how far we've come since those little cabins.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556346711030508196, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: text.Array.data[1]
+      value: It's a wonder what natural resources can do for humanity.
       objectReference: {fileID: 0}
     - target: {fileID: 4572231828397473703, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -40636,6 +40686,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2997948548359688796, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cf087d0464391044393e4a90b7407065, type: 2}
     - target: {fileID: 3745320200302195295, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
       propertyPath: m_Name
       value: Peasent
@@ -40683,6 +40737,23 @@ PrefabInstance:
     - target: {fileID: 4085288557985081573, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556346711030508196, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: text.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556346711030508196, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: text.Array.data[0]
+      value: You heard what happened to the last guy, Greg?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556346711030508196, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: text.Array.data[1]
+      value: Heard he was out it the forest one day and was eaten by a gnome.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556346711030508196, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: text.Array.data[2]
+      value: How's that even possible? Gnomes aren't alive. They don't even have
+        mouths underneath that beard.
       objectReference: {fileID: 0}
     - target: {fileID: 4572231828397473703, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -41830,6 +41901,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2997948548359688796, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c4854801fdfb18040b42d7866ab082d2, type: 2}
     - target: {fileID: 3745320200302195295, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
       propertyPath: m_Name
       value: Peasent
@@ -41877,6 +41952,23 @@ PrefabInstance:
     - target: {fileID: 4085288557985081573, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556346711030508196, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: text.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556346711030508196, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: text.Array.data[0]
+      value: Look at this pitiful thing.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556346711030508196, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: text.Array.data[1]
+      value: Imagine how much wood we could get out of this thing if the mayor didn't
+        call this a public landmark.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556346711030508196, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: text.Array.data[2]
+      value: What's it even marking? It's just a dead tree. To hell with it, I say.
       objectReference: {fileID: 0}
     - target: {fileID: 4572231828397473703, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -42858,6 +42950,45 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1581251613}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1581663797
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1581663799}
+  - component: {fileID: 1581663798}
+  m_Layer: 0
+  m_Name: AudioListener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!81 &1581663798
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581663797}
+  m_Enabled: 1
+--- !u!4 &1581663799
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581663797}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -350.79947, y: 78.76254, z: -238.5507}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1589167018
 GameObject:
   m_ObjectHideFlags: 0
@@ -46334,6 +46465,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2997948548359688796, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 18a7fc62b66f94145b689e62ccbc863a, type: 2}
     - target: {fileID: 3745320200302195295, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
       propertyPath: m_Name
       value: Peasent
@@ -46381,6 +46516,23 @@ PrefabInstance:
     - target: {fileID: 4085288557985081573, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556346711030508196, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: text.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556346711030508196, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: text.Array.data[0]
+      value: Man, it's so cold here nowadays.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556346711030508196, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: text.Array.data[1]
+      value: I sure hope we can make it to summer soon.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556346711030508196, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: text.Array.data[2]
+      value: They say it's warmer in the forest, but ain't you heard the rumors?
+        There's some messed up beings in there.
       objectReference: {fileID: 0}
     - target: {fileID: 4572231828397473703, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -54446,6 +54598,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2997948548359688796, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cf087d0464391044393e4a90b7407065, type: 2}
     - target: {fileID: 3745320200302195295, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
       propertyPath: m_Name
       value: Peasent
@@ -61057,6 +61213,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2997948548359688796, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cf087d0464391044393e4a90b7407065, type: 2}
     - target: {fileID: 3745320200302195295, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
       propertyPath: m_Name
       value: Peasent
@@ -61104,6 +61264,14 @@ PrefabInstance:
     - target: {fileID: 4085288557985081573, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556346711030508196, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: text.Array.data[0]
+      value: Man, this place used to be a lot livelier.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556346711030508196, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
+      propertyPath: text.Array.data[1]
+      value: I mean I know all those trees helped us with construction but still.
       objectReference: {fileID: 0}
     - target: {fileID: 4572231828397473703, guid: 1302080e2cac5ba428ede7670999244b, type: 3}
       propertyPath: m_AnchorMax.y

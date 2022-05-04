@@ -42,15 +42,6 @@ namespace Timber.InventorySystem
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                int rnd = UnityEngine.Random.Range(1, 5);
-                while (rnd == 3 && GetFirstItemIndex(3) != -1)
-                {
-                    rnd = UnityEngine.Random.Range(1, 5);
-                }
-                AddItem(rnd, 1);
-            }
             if (Input.GetKeyDown(KeyCode.Alpha9))
             {
                 if (File.Exists(Path.Combine(Application.persistentDataPath, "/SaveData.txt")))

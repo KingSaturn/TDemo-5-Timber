@@ -52,7 +52,7 @@ public class Ethics : MonoBehaviour
     private void updateRotation()
     {
         float zRotation = (Mathf.Clamp(info.ethics, maxEthic, minEthic));
-        rectTransform.rotation = Quaternion.Euler(0, 0, zRotation);
+        rectTransform.rotation = Quaternion.Euler(0, 180, zRotation);
         Debug.Log(zRotation);
     }
 }

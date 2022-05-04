@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 6151725483079823882}
   - component: {fileID: 8267385099895441088}
   - component: {fileID: 7312213379576495881}
-  - component: {fileID: 8637364075079922908}
   - component: {fileID: 197028388387351217}
+  - component: {fileID: 5962447985829018988}
   m_Layer: 0
   m_Name: InteractableOakTree
   m_TagString: Mushroom
@@ -97,22 +97,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 25, y: 78.3022, z: 25}
   m_Center: {x: 0.001750946, y: 39.317894, z: 2.3330822}
---- !u!54 &8637364075079922908
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7618782709322589973}
-  serializedVersion: 2
-  m_Mass: 0.0000001
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!114 &197028388387351217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,3 +118,21 @@ MonoBehaviour:
   speed:
     baseValue: 0
   itemSpawnID: 1
+--- !u!143 &5962447985829018988
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7618782709322589973}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 156.938
+  m_Radius: 20.18
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0.001750946, y: 13.2, z: 2.3330822}

@@ -8,12 +8,14 @@ public class PeasentController : MonoBehaviour
     public float interactDistance;
     private float faceTargetTimer = 0.0f;
     private GameObject player;
+    private AudioSource greetingSound;
     private NPC_Interact interactManager;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         interactManager = this.GetComponentInChildren<NPC_Interact>();
+        greetingSound = this.GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -32,6 +34,7 @@ public class PeasentController : MonoBehaviour
             if (distance < interactDistance)
             {
                 faceTargetTimer = 1.0f;
+                greetingSound.Play();
                 interactManager.Interact();
             }
         }

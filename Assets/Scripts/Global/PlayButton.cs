@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class PlayButton : MonoBehaviour
 {
+    public Canvas controls;
     private SaveData data;
     private Text buttonText;
 
@@ -37,4 +38,8 @@ public class PlayButton : MonoBehaviour
         }
     }
 
+    public void ShowControls()
+    {
+        controls.enabled = true;
+    }
 }

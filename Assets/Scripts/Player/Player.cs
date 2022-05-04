@@ -24,6 +24,8 @@ namespace player_scope
 			public static Canvas inventory_canvas;
 			public static PlayerAttack attack;
 			public static float attackTimer;
+			public bool deadEntGone = false;
+			public bool oakEntGone = false;
 	//Animation Block
 		//The player must have an Animator component
 		private Animator human_animations;
@@ -81,6 +83,8 @@ namespace player_scope
 					info.inventorySize.SetValue(data.info[2]);
 					info.speed.SetValue(data.info[3]);
 					info.ethics = data.ethics;
+					deadEntGone = data.deadEntGone;
+					oakEntGone = data.oakEntGone;
 				}
 			player_hand = GameObject.Find("Lumber_Jack/Armature/Hand_L/Hand_L_end");
 				inventory = GameObject.Find("Lumber_Jack/Menus/Inventory");

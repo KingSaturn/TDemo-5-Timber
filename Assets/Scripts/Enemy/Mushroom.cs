@@ -15,7 +15,11 @@ public class Mushroom : MonoBehaviour
 	private float lookSpeed = 2.0f;
 	public float attackRadius;
 	private float attackTimer;
+	private AudioSource angrySound;
+	private AudioSource talkSound;
 	private SphereCollider rangeCollider;
+	private SkinnedMeshRenderer meshRenderer;
+	public Material angy;
 
 
 	private bool is_neutral;
@@ -36,6 +40,9 @@ public class Mushroom : MonoBehaviour
 		rangeCollider = this.GetComponent<SphereCollider>();
 		mushroom_animations = this.GetComponent<Animator>();
 		attack = this.GetComponentInChildren<EnemyAttack>();
+		meshRenderer = this.GetComponentInChildren<SkinnedMeshRenderer>();
+		angrySound = this.GetComponents<AudioSource>()[0];
+		talkSound = this.GetComponents<AudioSource>()[1];
 		//Need to track and set the mushrooms state ie Aggressive or not
 		//Animator value
 		mushroom_animations.SetBool("Is_Neutral", true);
@@ -52,6 +59,14 @@ public class Mushroom : MonoBehaviour
     // Update is called once per frame
     void Update()
 	{
+		if (player.GetComponent<PlayerInfo>().ethics <= -50 && is_neutral)
+		{
+			mushroom_animations.SetBool("Is_Neutral", false);
+			mushroom_animations.SetTrigger("Transform");
+			meshRenderer.material = angy;
+			StartCoroutine(Transform());
+		}
+
 		if (info.currentHp <= 0)
         {
 			Destroy(this.gameObject);
@@ -81,15 +96,20 @@ public class Mushroom : MonoBehaviour
 	//Talking
 		if(Input.GetKeyDown(KeyCode.R )&& (movement_animation_logger== 0 ) )
 		{
-			switch(is_neutral )
+			float distance2 = Vector3.Distance(player.transform.position, transform.position);
+			switch (is_neutral )
 			{
+
 				case false:
 					Debug.Log("Cannot talk" );
 					break;
 				
 				default:
-					Debug.Log("Talk" );
-					mushroom_animations.SetTrigger("IsTalking" );
+					if (distance2 < attackRadius)
+                    {
+						talkSound.Play();
+						mushroom_animations.SetTrigger("IsTalking");
+					}
 					break;
 			}
 		}
@@ -106,11 +126,10 @@ public class Mushroom : MonoBehaviour
 					break;
 				
 				default:
-					mushroom_animations.SetBool("Is_Neutral", false );
-					is_neutral= false;
-
-					lookSpeed = 7;
-					mushroom_animations.SetTrigger("Transform" );
+					mushroom_animations.SetBool("Is_Neutral", false);
+					mushroom_animations.SetTrigger("Transform");
+					meshRenderer.material = angy;
+					StartCoroutine(Transform());
 					break;
 			}
 			
@@ -210,4 +229,12 @@ public class Mushroom : MonoBehaviour
 		Debug.Log("DAMAGED");
 		attack.DealDamage(10);
     }
+
+	IEnumerator Transform()
+    {
+		yield return new WaitForSeconds(1f);
+		is_neutral = false;
+		angrySound.PlayDelayed(Random.Range(0.0f, 2.0f));
+		lookSpeed = 7;
+	}
 }
